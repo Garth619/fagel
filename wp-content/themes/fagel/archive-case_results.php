@@ -4,7 +4,7 @@
 
   <?php get_template_part('page-templates/includes/page_banner/template', 'banner_case_results');?>
 
-  <div id='page-container'>
+  <div id='page-container' class=''>
 
     <?php get_template_part('page-templates/includes/template', 'case_results_filter');?>
 
