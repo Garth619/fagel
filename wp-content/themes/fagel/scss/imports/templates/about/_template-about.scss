@@ -1,0 +1,169 @@
+#about-title {
+  &.page-title {
+    @include mq(small_tablet) {
+      font-size: 45px;
+    }
+    @include mq(small_laptop) {
+      padding-top: 40px;
+      @include quick_type(60px, 70px, null);
+    }
+    @include mq(monitor) {
+      padding-top: 50px;
+    }
+  }
+}
+
+#about-inner {
+  margin-top: 42px;
+  @include mq(small_laptop) {
+    margin-top: 71px;
+  }
+  @include mq(small_laptop) {
+    max-width: 908px;
+    @include margin_lr();
+  }
+  @include mq(large_laptop) {
+    margin-top: 92px;
+    max-width: 100%;
+    padding: 0 25px;
+    gap: 100px;
+    @include flex();
+  }
+  @include mq(monitor) {
+    max-width: 1470px;
+    gap: 175px;
+  }
+  &.content {
+    font-size: 18px;
+    line-height: 30px;
+    blockquote {
+      margin-top: 35px;
+      @include mq(small_laptop) {
+        margin-top: 71px;
+      }
+      p {
+        max-width: 100%;
+        br {
+          display: none;
+          @include mq(small_tablet) {
+            display: inline-block;
+          }
+          @include mq(large_laptop) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about-col {
+  @include mq(large_laptop) {
+    flex-basis: 50%;
+  }
+  &:last-of-type {
+    @include mq(small_tablet) {
+      padding-top: 19px;
+    }
+    @include mq(large_laptop) {
+      padding-top: 0px;
+    }
+    p {
+      &:last-of-type {
+        @include mq(small_laptop) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+#about-caption-wrapper {
+  @include mq(small_tablet) {
+    margin-bottom: 60px;
+    max-width: 579px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    margin-bottom: 80px;
+  }
+  @include mq(large_laptop) {
+    margin-bottom: 67px;
+    max-width: 639px;
+  }
+  #about-image {
+    @include mq(small_tablet) {
+      padding: 0 47px;
+    }
+    @include mq(small_laptop) {
+      padding: 0;
+      max-width: 532px;
+    }
+    @include mq(large_laptop) {
+      max-width: 100%;
+      position: relative;
+      left: -44px;
+    }
+    @include mq(monitor) {
+    }
+    img {
+      @include image();
+      width: 100%;
+    }
+  }
+  #about-caption {
+    margin-top: 14px;
+    margin-bottom: 30px;
+    background: $blue;
+    padding: 30px 22px;
+    position: relative;
+    z-index: 1;
+    @include type(
+      (
+        size: 18px,
+        height: 28px,
+        family: $secondaryfont,
+        color: $white,
+        align: center,
+      )
+    );
+    @include mq(small_tablet) {
+      margin-top: -67px;
+      position: relative;
+      padding: 30px 37px 54px;
+      //padding: 30px 54px 54px;
+      right: -73px;
+      width: calc(100% - 73px);
+      @include quick_type(21px, 33px, null);
+    }
+    @include mq(small_laptop) {
+      //width: 100%;
+      //right: 0;
+    }
+    @include mq(large_laptop) {
+      padding: 36px 49px 49px;
+      width: 100%;
+      right: -3px;
+      //width: calc(100% - 103px);
+    }
+    @include mq(monitor) {
+      width: 98%;
+      right: -13px;
+      padding: 44px 49px 49px;
+      @include quick_type(25px, 40px, null);
+    }
+    &::after {
+      @include mq(small_tablet) {
+        transform: rotate(-45deg);
+        @include abs(-46px, 18px, null, null);
+        @include tri(left, 34px, 34px, #000979);
+        @include contentdisplay();
+      }
+    }
+    p {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

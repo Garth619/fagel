@@ -1,0 +1,43 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 317 339">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1c2326;
+      }
+
+      .cls-2, .cls-3 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        font-size: 40px;
+        fill: #656565;
+        font-family: PlayfairDisplay-Regular, Playfair Display;
+      }
+
+      .cls-4 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-5, .cls-6 {
+        fill: none;
+      }
+
+      .cls-6 {
+        stroke: #656565;
+      }
+    </style>
+  </defs>
+  <g id="Group_91" data-name="Group 91">
+    <rect id="Rectangle_199" data-name="Rectangle 199" class="cls-1" width="317" height="339"/>
+    <g id="Photo_Coming_Soon" data-name="Photo Coming Soon" class="cls-2">
+      <text class="cls-3" transform="translate(101.23 136.76)"><tspan class="cls-4">P</tspan><tspan x="23.05" y="0">hoto </tspan></text>
+      <text class="cls-3" transform="translate(82.87 181.76)">Coming </text>
+      <text class="cls-3" transform="translate(108.85 226.76)">Soon</text>
+    </g>
+    <g id="Rectangle_204" data-name="Rectangle 204">
+      <rect class="cls-5" x="21" y="22" width="275" height="295"/>
+      <rect class="cls-6" x="21.5" y="22.5" width="274" height="294"/>
+    </g>
+  </g>
+</svg>

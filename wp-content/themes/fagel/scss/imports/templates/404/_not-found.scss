@@ -1,0 +1,15 @@
+#not-found {
+  text-align: center;
+  margin-top: 40px;
+  &.content {
+    font-size: 18px;
+    @include mq(small_laptop) {
+      font-size: 22px;
+    }
+    a,
+    .go_back {
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+}

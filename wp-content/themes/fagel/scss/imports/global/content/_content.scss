@@ -1,0 +1,219 @@
+.content {
+  @include type(
+    (
+      size: 16px,
+      height: 26px,
+      family: $primaryfont,
+      color: $black,
+    )
+  );
+  @include mq(small_tablet) {
+    @include quick_type(17px, 30px, null);
+  }
+  @include mq(large_laptop) {
+    @include quick_type(18px, 30px, null);
+  }
+  strong {
+    text-transform: uppercase;
+  }
+  h1 {
+  }
+  h2 {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    @include type(
+      (
+        size: 20px,
+        height: 25px,
+        family: $primaryfont,
+        color: $blue,
+        weight: 700,
+      )
+    );
+    @include mq(large_laptop) {
+      @include quick_type(23px, 30px, null);
+    }
+    @include mq(monitor) {
+      @include quick_type(25px, 30px, null);
+    }
+  }
+  h3 {
+    padding-bottom: 26px;
+    @include type(
+      (
+        size: 16px,
+        height: 25px,
+        family: $primaryfont,
+        weight: 700,
+      )
+    );
+    @include mq(small_tablet) {
+      @include quick_type(18px, 30px, null);
+    }
+    @include mq(large_laptop) {
+      @include quick_type(20px, 30px, null);
+    }
+  }
+  h4 {
+    margin-bottom: 15px;
+    @include type(
+      (
+        size: 15px,
+        height: 24px,
+        family: $primaryfont,
+        weight: 700,
+        transform: uppercase,
+      )
+    );
+    @include mq(small_tablet) {
+      @include quick_type(17px, 30px, null);
+    }
+    @include mq(large_laptop) {
+      @include quick_type(18px, 30px, null);
+    }
+  }
+  p,
+  ul {
+    margin-bottom: 25px;
+  }
+  a {
+    font-weight: 700;
+    color: $blue;
+    transition: all 200ms ease-in-out;
+    text-decoration: none;
+    &:hover {
+      color: $red;
+    }
+  }
+  ul {
+    //list-style: none;
+    //margin: 0;
+    margin-left: 20px;
+    &.single-line-list {
+      li {
+        margin-bottom: 13px;
+      }
+    }
+    li::marker {
+      color: $red;
+    }
+    li {
+      position: relative;
+      padding-left: 3px;
+      margin-bottom: 25px;
+      @include mq(small_tablet) {
+        padding-left: 12px;
+      }
+    }
+  }
+  blockquote {
+    //border-top: 3px $red solid;
+    //border-bottom: 3px $red solid;
+    padding: 0px;
+    margin-top: 47px;
+    margin-bottom: 47px;
+    position: relative;
+    @include type(
+      (
+        size: 21px,
+        height: 33px,
+        family: $primaryfont,
+        color: $blacktwo,
+        weight: 700,
+        align: center,
+      )
+    );
+    @include mq(small_tablet) {
+      margin-top: 35px;
+      margin-bottom: 35px;
+      //margin-top: 37px;
+      //margin-bottom: 37px;
+
+      line-height: 28px;
+      @include quick_type(27px, 40px, null);
+    }
+
+    // @media screen and (min-width: 950px) {
+    //   max-width: 680px;
+    //   @include margin_lr();
+    // }
+
+    // @include mq(monitor) {
+    //   margin-bottom: 40px;
+    //   @include quick_type(27px, 40px, null);
+    // }
+    &::before,
+    &::after {
+      background: $red;
+      //position: absolute;
+      //left: 0;
+      max-width: 190px;
+      @include box(100%, 3px);
+      @include margin_lr();
+      @include contentdisplay();
+      @include mq(small_tablet) {
+        max-width: 100%;
+      }
+    }
+    &::before {
+      //top: 0;
+      margin-bottom: 22px;
+      @include mq(small_tablet) {
+        margin-bottom: 29px;
+      }
+    }
+    &::after {
+      //bottom: 0;
+      margin-top: 22px;
+      @include mq(small_tablet) {
+        margin-top: 32px;
+      }
+    }
+    p {
+      margin-bottom: 0;
+      max-width: 480px;
+      @include margin_lr();
+      @include mq(large_laptop) {
+        max-width: 715px;
+      }
+    }
+    a {
+      color: $blacktwo;
+      text-decoration: none;
+    }
+  }
+}
+
+.wp-block-image {
+  figure {
+    &.alignleft {
+      @media screen and (min-width: 1100px) {
+        img {
+          float: left;
+          margin-right: 39px;
+        }
+      }
+    }
+    &.aligncenter {
+      img {
+        @include margin_lr();
+      }
+    }
+    &.alignright {
+      @media screen and (min-width: 1100px) {
+        img {
+          float: right;
+          margin-left: 39px;
+        }
+      }
+    }
+    img {
+      margin-bottom: 20px;
+      @include image();
+      @include mq(small_tablet) {
+        margin-top: 60px;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

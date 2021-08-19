@@ -1,0 +1,204 @@
+#contact-wrapper {
+  //padding: 60px 30px 40px;
+  color: $white;
+  text-align: center;
+  @include mq(small_tablet) {
+    padding: 28px 30px 40px;
+    max-width: 920px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    max-width: 100%;
+    padding: 0px 66px 40px;
+    @include flex(space-between);
+  }
+  @include mq(small_monitor) {
+    padding: 0px 0px 52px;
+    max-width: 1515px;
+  }
+  span.location-title {
+    display: block;
+    @include type(
+      (
+        size: 16px,
+        height: 19px,
+        family: $primaryfont,
+        weight: 700,
+        transform: uppercase,
+      )
+    );
+  }
+  a.map-link {
+    display: inline-block;
+    transition: all 200ms ease-in-out;
+    @include type(
+      (
+        size: 14px,
+        family: $primaryfont,
+        color: $red,
+        weight: 700,
+        transform: uppercase,
+        decoration: underline,
+      )
+    );
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+#contact-left {
+  background: $blacktwo;
+  padding: 63px 35px 35px;
+  @include mq(small_tablet) {
+    max-width: 535px;
+    padding: 63px 35px 56px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    flex-basis: 296px;
+    flex-shrink: 0;
+    padding: 0px 29px;
+    height: 411px;
+    margin-top: 150px;
+    @include flex(center, null, column);
+  }
+  @include mq(large_laptop) {
+    flex-basis: 419px;
+    height: 451px;
+    margin-top: 138px;
+  }
+  @include mq(small_monitor) {
+    flex-basis: 450px;
+    margin-top: 167px;
+  }
+  a#contact-logo {
+    display: inline-block;
+    @include margin_lr();
+    @include mq(small_tablet) {
+      max-width: 320px;
+    }
+    svg,
+    img {
+      @include image();
+    }
+  }
+  span {
+    display: block;
+    &.main-office-title {
+      margin-top: 38px;
+      max-width: max-content;
+      padding-bottom: 15px;
+      border-bottom: 2px solid $red;
+      @include margin_lr();
+      @include mq(small_tablet) {
+        margin-top: 62px;
+      }
+    }
+    &.main-office-address {
+      margin-top: 12px;
+      margin-bottom: 14px;
+      @include type(
+        (
+          size: 18px,
+          height: 25px,
+          family: $primaryfont,
+        )
+      );
+    }
+    &.contact-cta {
+      margin-top: 52px;
+      margin-bottom: 27px;
+      @include type(
+        (
+          size: 20px,
+          height: 23px,
+          family: $primaryfont,
+        )
+      );
+      a {
+        color: $white;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 200ms ease-in-out;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+a#view-locations-button {
+  @include mq(small_tablet) {
+    display: none;
+  }
+  button {
+    padding: 15px 24px;
+  }
+}
+
+#contact-right {
+  color: #000;
+  padding: 43px 35px;
+  @include mq(small_tablet) {
+    margin-top: 39px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 0px 120px;
+    padding: 43px 35px 106px;
+  }
+  @include mq(small_laptop) {
+    margin-top: 67px;
+    margin-left: 60px;
+    padding: 43px 0px 82px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 0px 66px;
+  }
+  @include mq(large_laptop) {
+    margin-left: 48px;
+    grid-gap: 0px 32px;
+    margin-top: 86px;
+    padding: 43px 0px 82px;
+  }
+  @include mq(small_monitor) {
+    margin-top: 131px;
+    margin-left: 108px;
+    padding: 43px 0px 154px;
+    grid-gap: 0px 46px;
+  }
+}
+
+.contact-single-location {
+  text-align: center;
+  margin-bottom: 45px;
+  max-width: 280px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    text-align: left;
+    max-width: 100%;
+    @include margin_lr(0);
+  }
+  @include mq(large_laptop) {
+    margin-bottom: 55px;
+  }
+  span.location-address {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    @include type(
+      (
+        size: 16px,
+        height: 25px,
+        family: $primaryfont,
+      )
+    );
+  }
+}
+
+body.page-template-template-contact {
+  #copyright {
+    margin-top: 29px;
+  }
+}

@@ -1,0 +1,291 @@
+#section-five {
+  @include mq(small_laptop) {
+    display: flex;
+    position: relative;
+    padding-left: 240px;
+    overflow: hidden;
+  }
+  @include mq(large_laptop) {
+    padding-left: 413px;
+  }
+  @include mq(monitor) {
+    padding-left: 722px;
+  }
+}
+
+#sec-five-left {
+  display: none;
+  @include mq(small_laptop) {
+    display: block;
+    width: 58%;
+    height: 683px;
+    @include abs(0, null, null, 0);
+  }
+  @include mq(large_laptop) {
+    width: 56%;
+    height: 635px;
+  }
+  @include mq(monitor) {
+    width: 59%;
+    height: 809px;
+  }
+  img {
+    object-fit: cover;
+    @include abs(0, null, null, 0);
+    @include image();
+    @include box(100%);
+  }
+}
+
+#sec-five-right {
+  background: $blacktwo;
+  color: $white;
+  text-align: center;
+  padding: 55px 40px 85px;
+  @include mq(small_tablet) {
+    padding: 84px 40px;
+  }
+  @include mq(small_laptop) {
+    width: 100%;
+    margin-top: 105px;
+    position: relative;
+    z-index: 1;
+    min-height: 631px;
+    padding: 0px 0px 70px 93px;
+  }
+  @include mq(large_laptop) {
+    padding: 0px 0px 52px 110px;
+    margin-top: 87px;
+    min-height: 601px;
+  }
+  @include mq(monitor) {
+    min-height: 775px;
+    padding: 68px 0px 52px 115px;
+  }
+  // &::before {
+  //   background: #283338;
+  //   z-index: 4;
+  //   @include box(53px, calc(100% - 53px));
+  //   @include abs(0, null, null, -53px);
+  //   @include contentdisplay();
+  // }
+  &::after {
+    @include mq(small_laptop) {
+      transform: rotate(315deg);
+      @include contentdisplay();
+      @include abs(null, null, 2px, -32px);
+      @include tri(right, 38px, 38px, #283338);
+    }
+  }
+}
+
+span#sec-five-title {
+  display: block;
+  @include type(
+    (
+      size: 45px,
+      height: 55px,
+      family: $secondaryfont,
+    )
+  );
+  @include mq(small_laptop) {
+    text-align: right;
+    color: $blacktwo;
+    margin-right: 45px;
+    margin-top: -88px;
+  }
+  @include mq(large_laptop) {
+    margin-right: 127px;
+    margin-top: -77px;
+  }
+  @include mq(monitor) {
+    margin-right: 318px;
+    margin-top: -143px;
+    @include quick_type(50px, 55px, null);
+  }
+}
+
+#sec-five-slider {
+  margin-top: 45px;
+  @include mq(small_laptop) {
+    margin-top: 130px;
+    padding-right: 45px;
+    @include flex(space-between);
+  }
+  @include mq(large_laptop) {
+    margin-top: 107px;
+  }
+  @include mq(monitor) {
+    margin-top: 119px;
+  }
+}
+
+#sec-five-slider-inner {
+  @include mq(small_laptop) {
+    width: calc(100% - 250px);
+    padding-right: 66px;
+  }
+  @include mq(monitor) {
+    margin-top: 69px;
+  }
+}
+
+.sec-five-single {
+  @include mq(small_laptop) {
+    text-align: left;
+  }
+  img {
+    @include image();
+    @include margin_lr();
+    @include mq(small_laptop) {
+      @include margin_lr(0);
+    }
+  }
+}
+
+.sec-five-description {
+  margin-top: 25px;
+  max-width: 500px;
+  @include margin_lr();
+  @include type(
+    (
+      size: 22px,
+      height: 35px,
+      spacing: 0.55px,
+      family: $secondaryfont,
+    )
+  );
+  @include mq(small_tablet) {
+    margin-top: 15px;
+  }
+  @include mq(small_laptop) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 31px;
+    font-size: 25px;
+    max-width: 100%;
+  }
+  @include mq(large_laptop) {
+    line-height: 37px;
+  }
+  @include mq(monitor) {
+    @include quick_type(27px, 40px, null);
+  }
+}
+
+span.sec-five-name {
+  display: block;
+  margin-top: 48px;
+  @include type(
+    (
+      size: 15px,
+      height: 20px,
+      family: $primaryfont,
+      weight: 700,
+    )
+  );
+  @include mq(small_laptop) {
+    margin-top: 55px;
+  }
+}
+
+#sec-five-arrows-wrapper {
+  @include mq(small_laptop) {
+    text-align: center;
+    flex-shrink: 0;
+    width: 250px;
+  }
+}
+
+#sec-five-quote {
+  display: none;
+  @include mq(small_laptop) {
+    display: block;
+  }
+  svg,
+  img {
+    @include box(79px);
+    @include mq(large_laptop) {
+      @include box(93px);
+    }
+    @include mq(large_laptop) {
+      @include box(107px);
+    }
+  }
+}
+
+#sec-five-arrows {
+  display: flex;
+  margin-top: 58px;
+  margin-bottom: 53px;
+  @include flex(center, center);
+  @include mq(small_laptop) {
+    margin-top: 160px;
+    margin-bottom: 128px;
+  }
+  @include mq(monitor) {
+    margin-top: 141px;
+    margin-bottom: 258px;
+  }
+  span.sec-five-arrow {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    @include box(6px, 10px);
+    &:hover {
+      &::before,
+      &::after {
+        background: $red;
+      }
+    }
+    &::before,
+    &::after {
+      background: $white;
+      position: absolute;
+      left: 0;
+      transition: all 200ms ease-in-out;
+      @include box(100%, 1px);
+      @include contentdisplay();
+    }
+    &::before {
+      top: 2px;
+    }
+    &::after {
+      top: 6px;
+    }
+    &#sec-five-arrow-left {
+      &::before {
+        transform: rotate(-45deg);
+      }
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+    &#sec-five-arrow-right {
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+#sec-five-arrow-counter {
+  margin: 0 50px;
+  @include type(
+    (
+      size: 15px,
+      family: $primaryfont,
+      color: $white,
+      weight: 700,
+      align: center,
+      spacing: 0.75px,
+    )
+  );
+}
+
+a#sec-five-button {
+  font-size: 15px;
+}

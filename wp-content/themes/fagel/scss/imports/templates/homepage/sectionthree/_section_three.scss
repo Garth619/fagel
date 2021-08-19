@@ -1,0 +1,399 @@
+#section-three {
+  @include mq(small_laptop) {
+    @include flex();
+  }
+}
+
+#sec-three-left {
+  background: $blue;
+  color: $white;
+  text-align: center;
+  //overflow: hidden;
+  padding: 72px 24px;
+  @include mq(small_tablet) {
+    padding: 79px 24px;
+  }
+  @include mq(small_laptop) {
+    width: 812px;
+    flex-shrink: 0;
+    padding: 93px 24px 72px 100px;
+    text-align: left;
+    min-height: 600px;
+    margin-top: 38px;
+    position: relative;
+  }
+  @include mq(large_laptop) {
+    padding: 93px 24px 100px 100px;
+  }
+  @include mq(monitor) {
+    width: 910px;
+    min-height: 700px;
+    margin-top: 55px;
+  }
+  &::before,
+  &::after {
+    @include mq(small_laptop) {
+      position: absolute;
+      @include contentdisplay();
+    }
+  }
+  &::before {
+    @include mq(small_laptop) {
+      top: 0;
+      right: -89px;
+      background: #000979;
+      @include box(90px, calc(100% - 88px));
+    }
+  }
+  &::after {
+    @include mq(small_laptop) {
+      bottom: 3px;
+      right: -53px;
+      @include tri(right, 63px, 63px, #000979);
+      transform: rotate(-495deg);
+    }
+  }
+}
+
+#sec-three-left-inner {
+  @include mq(small_laptop) {
+    max-width: 419px;
+  }
+  @include mq(monitor) {
+    max-width: 465px;
+  }
+}
+
+span#sec-three-title {
+  display: block;
+  max-width: 490px;
+  @include margin_lr();
+  @include type(
+    (
+      size: 45px,
+      height: 50px,
+      family: $secondaryfont,
+      align: center,
+    )
+  );
+  @include mq(small_laptop) {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include mq(monitor) {
+    @include quick_type(50px, 55px, null);
+  }
+  &::after {
+    margin-top: 32px;
+    margin-bottom: 23px;
+    background: $bluelight;
+    @include margin_lr();
+    @include box(89px, 2px);
+    @include contentdisplay();
+    @include mq(small_tablet) {
+      margin-bottom: 33px;
+    }
+    @include mq(small_laptop) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    @include mq(monitor) {
+      margin-bottom: 35px;
+      @include box(89px, 3px);
+    }
+  }
+}
+
+span#sec-three-intro {
+  display: block;
+  max-width: 370px;
+  @include margin_lr();
+  @include type(
+    (
+      size: 20px,
+      height: 26px,
+      family: $primaryfont,
+      weight: 700,
+    )
+  );
+  @include mq(small_tablet) {
+    max-width: 470px;
+  }
+  @include mq(small_laptop) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include mq(large_laptop) {
+    max-width: 406px;
+  }
+  @include mq(monitor) {
+    max-width: 450px;
+    @include quick_type(23px, 30px, null);
+  }
+}
+
+span#sec-three-description {
+  display: block;
+  margin-top: 22px;
+  max-width: 470px;
+  @include margin_lr();
+  @include type(
+    (
+      size: 16px,
+      height: 22px,
+      family: $primaryfont,
+    )
+  );
+  @include mq(small_tablet) {
+    max-width: 635px;
+  }
+  @include mq(small_laptop) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  @include mq(monitor) {
+    max-width: 425px;
+    @include quick_type(18px, 25px, null);
+  }
+}
+
+a#sec-three-button {
+  margin-top: 27px;
+  @include mq(small_laptop) {
+    margin-top: 37px;
+  }
+}
+
+#sec-three-slider {
+  background: $blacktwo;
+}
+
+.sec-three-single {
+  @include mq(small_tablet) {
+    background: $blacktwo;
+    position: relative;
+    color: $white;
+    text-align: center;
+    height: 535px;
+    padding: 110px 25px;
+    border-right: 1px solid #2e383c;
+  }
+  @include mq(small_laptop) {
+    height: 575px;
+    padding: 125px 25px 110px;
+  }
+  @include mq(large_laptop) {
+    height: 607px;
+  }
+  @include mq(monitor) {
+    height: 681px;
+    padding: 158px 25px 110px;
+  }
+  span {
+    @include mq(small_tablet) {
+      display: block;
+      color: $white;
+    }
+    &.sec-three-single-amount {
+      @include mq(small_tablet) {
+        @include type(
+          (
+            size: 80px,
+            family: $secondaryfont,
+          )
+        );
+      }
+      @include mq(monitor) {
+        font-size: 90px;
+      }
+    }
+    &.sec-three-single-type {
+      @include mq(small_tablet) {
+        margin-top: 31px;
+        @include type(
+          (
+            size: 12px,
+            height: 15px,
+            family: $primaryfont,
+            weight: 700,
+            spacing: 1.2px,
+            transform: uppercase,
+          )
+        );
+      }
+      @include mq(monitor) {
+        @include quick_type(15px, 18px, null);
+      }
+      &::after {
+        @include mq(small_tablet) {
+          background: $red;
+          margin-top: 20px;
+          margin-bottom: 33px;
+          @include margin_lr();
+          @include contentdisplay();
+          @include box(47px, 2px);
+        }
+      }
+    }
+    &.sec-three-single-title {
+      @include mq(small_tablet) {
+        max-width: 252px;
+        @include margin_lr();
+        @include type(
+          (
+            size: 17px,
+            height: 20px,
+            family: $primaryfont,
+            weight: 700,
+          )
+        );
+      }
+      @include mq(monitor) {
+        @include quick_type(20px, 24px, null);
+      }
+    }
+    &.sec-three-single-desc {
+      @include mq(small_tablet) {
+        margin-top: 18px;
+        max-width: 273px;
+        @include margin_lr();
+        @include type(
+          (
+            size: 15px,
+            height: 20px,
+            family: $primaryfont,
+          )
+        );
+      }
+      @include mq(monitor) {
+        @include quick_type(18px, 24px, null);
+      }
+    }
+  }
+  a.sec-three-single-button {
+    @include mq(small_tablet) {
+      background: $bluelight;
+      padding: 20px 14px;
+      transition: all 200ms ease-in-out;
+      @include flex(center, center);
+      @include abs(null, 0, 0, null);
+      @include type(
+        (
+          size: 14px,
+          family: $primaryfont,
+          weight: 700,
+          spacing: 1.4px,
+          color: $blacktwo,
+          align: center,
+          transform: uppercase,
+        )
+      );
+    }
+    &:hover {
+      background: $blue;
+      color: $white;
+      &::after {
+        @include tri(right, 3px, 6px, $white);
+      }
+    }
+    &::after {
+      margin-left: 8px;
+      transition: all 200ms ease-in-out;
+      @include contentdisplay(inline-block);
+      @include tri(right, 3px, 6px, $black);
+    }
+  }
+}
+
+#sec-three-arrows {
+  display: none;
+  @include mq(small_tablet) {
+    margin-top: 28px;
+  }
+  @include mq(small_laptop) {
+    display: flex;
+    cursor: pointer;
+    @include flex(center, center);
+    @include abs(null, 42px, 29px, null);
+  }
+  @include mq(large_laptop) {
+    bottom: 26px;
+  }
+  @include mq(monitor) {
+    bottom: 31px;
+  }
+  span.sec-three-arrow {
+    display: block;
+    position: relative;
+    @include box(6px, 10px);
+    &:hover {
+      &::before,
+      &::after {
+        background: $red;
+      }
+    }
+    &::before,
+    &::after {
+      background: $white;
+      position: absolute;
+      left: 0;
+      transition: all 200ms ease-in-out;
+      @include box(100%, 1px);
+      @include contentdisplay();
+    }
+    &::before {
+      top: 2px;
+    }
+    &::after {
+      top: 6px;
+    }
+    &#sec-three-arrow-left {
+      &::before {
+        transform: rotate(-45deg);
+      }
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+    &#sec-three-arrow-right {
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+#sec-three-arrow-counter {
+  margin: 0 35px;
+  @include type(
+    (
+      size: 15px,
+      family: $primaryfont,
+      color: $white,
+      weight: 700,
+      align: center,
+      spacing: 0.75px,
+    )
+  );
+}
+
+#sec-three-right {
+  display: none;
+  @include mq(small_tablet) {
+    display: block;
+  }
+  @include mq(small_laptop) {
+    margin-left: -200px;
+    width: 57%;
+  }
+  @include mq(large_laptop) {
+    width: 77%;
+  }
+  @include mq(monitor) {
+    width: calc(100% - 710px);
+  }
+}

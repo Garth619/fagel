@@ -1,0 +1,114 @@
+a.button {
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+    button {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  button {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    border: none;
+    padding: 18px 18px;
+    background: transparent;
+    @include flex(center, center);
+    @include type(
+      (
+        size: 15px,
+        spacing: 0.75px,
+        family: $primaryfont,
+        color: $white,
+        weight: 700,
+        align: center,
+        transform: uppercase,
+      )
+    );
+    @include mq(small_tablet) {
+      padding: 18px 37px;
+    }
+    @include mq(monitor) {
+      font-size: 17px;
+      padding: 23px 37px;
+    }
+    &::before,
+    &::after {
+      z-index: -1;
+      border-radius: 50px;
+      @include box(100%);
+      @include abs(0, null, null, 0);
+      @include contentdisplay();
+    }
+    &::before {
+      background: $redgradient;
+    }
+    &::after {
+      background: $reddark;
+      opacity: 0;
+      transition: all 200ms ease-in-out;
+    }
+    span {
+      &.button-tri {
+        &::after {
+          margin-left: 10px;
+          @include contentdisplay(inline-block);
+          @include tri(right, 5px, 8px, $white);
+          @include mq(small_tablet) {
+            margin-left: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.button-two {
+  display: inline-block;
+  border: 1px solid $white;
+  padding: 14px 31px;
+  border-radius: 50px;
+  background: transparent;
+  transition: all 200ms ease-in-out;
+  @include type(
+    (
+      size: 14px,
+      family: $primaryfont,
+      weight: 700,
+      color: $white,
+      spacing: 0.75px,
+      align: center,
+      transform: uppercase,
+    )
+  );
+  @include mq(small_tablet) {
+    padding: 17px 31px;
+  }
+  &:hover {
+    background: $white;
+  }
+  &::after {
+    margin-left: 11px;
+    transition: all 200ms ease-in-out;
+    @include tri(right, 5px, 8px, $white);
+    @include contentdisplay(inline-block);
+  }
+  &.button-two-blue {
+    &:hover {
+      color: $blue;
+      &::after {
+        @include tri(right, 5px, 8px, $blue);
+      }
+    }
+  }
+  &.button-two-black {
+    &:hover {
+      color: $blacktwo;
+      &::after {
+        @include tri(right, 5px, 8px, $blacktwo);
+      }
+    }
+  }
+}

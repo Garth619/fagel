@@ -1,0 +1,398 @@
+#sidebar-wrapper {
+  margin-bottom: -48px;
+  @include mq(small_tablet) {
+    padding: 47px 0px 0px;
+  }
+  @include mq(small_laptop) {
+    padding: 0px;
+    order: 1;
+    flex-shrink: 0;
+    width: 390px;
+    margin-right: 58px;
+  }
+  @include mq(large_laptop) {
+    width: 390px;
+    margin-right: 85px;
+  }
+  @include mq(monitor) {
+    width: 502px;
+    margin-right: 135px;
+  }
+  #sidebar-video-wrapper {
+    display: none;
+    @include mq(small_laptop) {
+      display: block;
+    }
+  }
+}
+
+#sidebar-video-wrapper {
+  padding: 18px 18px 8px;
+  background: $blacktwo;
+  margin-bottom: 37px;
+  @include mq(small_tablet) {
+    max-width: 390px;
+    padding: 34px 18px 18px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    margin-bottom: 32px;
+    max-width: 100%;
+  }
+  @include mq(large_laptop) {
+    padding: 35px 18px 12px;
+  }
+  @include mq(monitor) {
+    padding: 43px 18px 18px;
+  }
+  span#sidebar-video-title {
+    display: block;
+    padding: 5px 18px;
+    margin-top: 5px;
+    @include type(
+      (
+        size: 15px,
+        height: 18px,
+        family: $primaryfont,
+        weight: 700,
+        color: $white,
+        align: center,
+      )
+    );
+    @include mq(small_tablet) {
+      margin-top: 9px;
+      @include quick_type(19px, 25px, null);
+    }
+    @include mq(large_laptop) {
+      @include quick_type(20px, 25px, null);
+    }
+    @include mq(monitor) {
+      margin-top: 18px;
+      padding: 5px 18px 10px;
+      @include quick_type(23px, 25px, null);
+    }
+  }
+}
+
+#sidebar-video {
+  @include mq(small_tablet) {
+    max-width: 305px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    max-width: 245px;
+  }
+  @include mq(monitor) {
+    max-width: 315px;
+  }
+  a {
+    text-decoration: none;
+  }
+  img.vid-thumb {
+    border: 4px solid $white;
+  }
+
+  span.sidebar-video-play-button {
+    @include box(53px);
+    &::after {
+      @include tri(right, 5px, 8px, $white);
+    }
+    span {
+      @include box(41px);
+    }
+  }
+}
+
+#sidebar-form {
+  display: none;
+  background: $blue;
+  color: $white;
+  padding: 35px 35px 118px;
+  position: relative;
+  margin-bottom: 39px;
+  @include mq(small_laptop) {
+    display: block;
+  }
+  @include mq(monitor) {
+    padding: 35px 45px 118px;
+  }
+  .gform_wrapper {
+    @include mq(large_laptop) {
+      padding: 0 5px;
+    }
+  }
+  .gform_body {
+    .gform_fields {
+      .gfield {
+        position: relative;
+        margin-bottom: 15px;
+        &#field_2_5 {
+          flex-basis: 100%;
+        }
+        &::after {
+          @include abs(24px, 12px, null, null);
+          @include contentdisplay(block, "*");
+          @include type(
+            (
+              size: 17px,
+              family: $primaryfont,
+              color: $red,
+            )
+          );
+        }
+        label {
+          display: none;
+        }
+        input,
+        textarea {
+          border: none;
+          border-radius: 4px;
+          width: 100%;
+          padding: 21px 22px;
+          @include type(
+            (
+              size: 17px,
+              family: $primaryfont,
+              color: #656565,
+            )
+          );
+        }
+        textarea {
+          height: 120px;
+        }
+      }
+    }
+    .validation_message {
+      margin-top: 8px;
+      @include type(
+        (
+          size: 15px,
+          family: $primaryfont,
+          color: $white,
+        )
+      );
+    }
+  }
+  .gform_footer {
+    margin-top: 58px;
+    border: 1px solid $white;
+    max-width: max-content;
+    padding: 15px 31px;
+    border-radius: 60px;
+    background: transparent;
+    transition: all 200ms ease-in-out;
+    @include flex(center, center);
+    @include abs(null, 38px, 59px, null);
+
+    &:hover {
+      background: $white;
+      &::after {
+        @include tri(right, 5px, 8px, $blue);
+      }
+      input[type="submit"] {
+        color: $blue;
+      }
+    }
+    &::after {
+      margin-left: 20px;
+      transition: all 200ms ease-in-out;
+      @include tri(right, 5px, 8px, $white);
+      @include contentdisplay();
+    }
+    input[type="submit"] {
+      border: none;
+      background: transparent;
+      @include type(
+        (
+          size: 15px,
+          family: $primaryfont,
+          weight: 700,
+          transform: uppercase,
+          color: $white,
+          spacing: 0.75px,
+        )
+      );
+    }
+  }
+  span.required {
+    display: block;
+    margin-top: -5px;
+    @include type(
+      (
+        size: 17px,
+        family: $primaryfont,
+      )
+    );
+  }
+}
+
+span#sidebar-form-title {
+  display: block;
+  @include type(
+    (
+      size: 38px,
+      height: 45px,
+      family: $secondaryfont,
+      align: center,
+    )
+  );
+  @include mq(large_laptop) {
+    max-width: 349px;
+    @include margin_lr();
+  }
+  &::after {
+    margin-top: 41px;
+    margin-bottom: 40px;
+    background: #9dc1ff;
+    @include margin_lr();
+    @include box(100px, 3px);
+    @include contentdisplay();
+  }
+}
+
+#sidebars {
+  .widget {
+    background: $blacktwo;
+    color: $white;
+    padding: 35px 47px 32px;
+    margin-bottom: 8px;
+    @include mq(small_tablet) {
+      padding: 35px 47px 45px;
+      margin-bottom: 51px;
+    }
+    @include mq(small_laptop) {
+      margin-bottom: 37px;
+    }
+    @include mq(large_laptop) {
+      padding: 43px 52px 45px;
+    }
+    h3 {
+      @include type(
+        (
+          size: 38px,
+          height: 50px,
+          family: $secondaryfont,
+          align: center,
+        )
+      );
+      &::after {
+        background: $red;
+        margin-top: 25px;
+        margin-bottom: 40px;
+        @include margin_lr();
+        @include box(100px, 3px);
+        @include contentdisplay();
+        @include mq(small_tablet) {
+          margin-bottom: 35px;
+        }
+        @include mq(small_laptop) {
+          margin-bottom: 25px;
+        }
+      }
+    }
+    ul {
+      list-style: none;
+      li {
+        @include type(
+          (
+            size: 16px,
+            height: 24px,
+            color: $white,
+            weight: 700,
+            family: $primaryfont,
+          )
+        );
+        &.blog-active {
+          a {
+            color: $red;
+          }
+        }
+        a {
+          display: block;
+          border-bottom: 1px solid #323638;
+          padding: 15px 10px;
+          transition: all 200ms ease-in-out;
+          color: $white;
+          text-decoration: none;
+          cursor: pointer;
+          &:hover {
+            @include mq(small_laptop) {
+              color: $red;
+            }
+          }
+          &.active {
+            color: $red;
+          }
+        }
+      }
+    }
+    ul.menu {
+      > li {
+        &.menu-item-has-children {
+          > a {
+            &::after {
+              margin-left: 4px;
+              @include contentdisplay(inline-block, "+");
+            }
+            &.active {
+              &::after {
+                @include contentdisplay(inline-block, "-");
+              }
+            }
+          }
+        }
+        &.current-menu-ancestor {
+          > a {
+            color: $red;
+          }
+        }
+        &:last-of-type {
+          > a {
+            border-bottom: none;
+          }
+          ul.sub-menu {
+            li {
+              &:first-of-type {
+                > a {
+                  border-top: 1px solid #323638;
+                }
+              }
+              &:last-of-type {
+                > a {
+                  border-bottom: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ul.sub-menu {
+      display: none;
+      li {
+        &.current-menu-item {
+          > a {
+            color: $red;
+          }
+        }
+
+        a {
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+  .widget_recent_entries {
+    ul {
+      li {
+        &:last-of-type {
+          a {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}

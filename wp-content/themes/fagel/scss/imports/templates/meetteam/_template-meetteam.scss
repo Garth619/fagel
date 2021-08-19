@@ -1,0 +1,179 @@
+#meet-team-wrapper {
+  padding-top: 30px;
+  @include mq(small_laptop) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 70px 45px;
+    grid-auto-rows: auto;
+    padding-top: 50px;
+    max-width: 1150px;
+    @include margin_lr();
+  }
+  @include mq(large_laptop) {
+    max-width: 1310px;
+    grid-gap: 90px 45px;
+    padding-top: 70px;
+  }
+  @include mq(monitor) {
+    max-width: 1430px;
+    grid-gap: 130px 85px;
+  }
+}
+
+.single-att {
+  max-width: 400px;
+  margin-bottom: 40px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    max-width: 679px;
+  }
+  @include mq(small_laptop) {
+    margin-bottom: 0px;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    height: 100%;
+    @include mq(small_tablet) {
+      padding-top: 30px;
+    }
+    @include mq(large_laptop) {
+      padding-top: 55px;
+    }
+    &:hover {
+      .single-att-content {
+        span.learn-more {
+          background: $blue;
+          color: $white;
+          &::after {
+            @include tri(right, 4px, 7px, $white);
+          }
+        }
+      }
+    }
+    .single-att-img {
+      position: relative;
+      @include mq(small_tablet) {
+        width: 280px;
+        z-index: 1;
+        @include abs(0, null, null, 0);
+      }
+      @include mq(small_laptop) {
+        width: 230px;
+      }
+      @include mq(large_laptop) {
+        width: 300px;
+      }
+      @include mq(monitor) {
+        width: 317px;
+      }
+      &::after {
+        display: none;
+        @include mq(small_tablet) {
+          transform: rotate(-45deg);
+          @include abs(3px, -34px, null, null);
+          @include tri(left, 40px, 40px, $blacktwo);
+          @include contentdisplay();
+        }
+        @include mq(large_laptop) {
+          @include abs(3px, -34px, null, null);
+        }
+      }
+      img {
+        width: 100%;
+        @include image();
+      }
+    }
+    .single-att-content {
+      background: $blacktwo;
+      padding: 20px 25px 75px;
+      position: relative;
+      @include box(100%);
+      @include mq(small_tablet) {
+        margin-top: 0px;
+        min-height: 305px;
+        right: -35px;
+        padding: 28px 25px 85px 277px;
+        width: calc(100% - 35px);
+      }
+      @include mq(small_laptop) {
+        padding: 28px 25px 85px 220px;
+      }
+      @include mq(large_laptop) {
+        right: -55px;
+        width: calc(100% - 55px);
+        padding: 33px 25px 85px 277px;
+      }
+      @include mq(monitor) {
+        padding: 33px 39px 85px 299px;
+      }
+      span {
+        display: block;
+        &.single-att-title {
+          @include type(
+            (
+              size: 29px,
+              height: 35px,
+              family: $secondaryfont,
+              color: $white,
+            )
+          );
+          @include mq(large_laptop) {
+            @include quick_type(32px, 36px, null);
+          }
+          br {
+            display: none;
+          }
+        }
+        &.single-att-position {
+          margin-top: 5px;
+          @include type(
+            (
+              size: 15px,
+              height: 18px,
+              weight: 700,
+              family: $primaryfont,
+              color: #9dc1ff,
+            )
+          );
+        }
+        &.single-att-descrip {
+          margin-top: 20px;
+          @include type(
+            (
+              size: 17px,
+              height: 28px,
+              family: $primaryfont,
+              color: $white,
+            )
+          );
+        }
+      }
+    }
+    span.learn-more {
+      background: #9dc1ff;
+      transition: all 200ms ease-in-out;
+      @include box(150px, 47px);
+      @include abs(null, 0, 0, null);
+      @include flex(center, center);
+      @include type(
+        (
+          size: 14px,
+          family: $primaryfont,
+          color: $blacktwo,
+          weight: 700,
+          spacing: 1.4px,
+          align: center,
+          transform: uppercase,
+        )
+      );
+      &::after {
+        margin-left: 6px;
+        transition: all 200ms ease-in-out;
+        @include contentdisplay();
+        @include tri(right, 4px, 7px, $blacktwo);
+      }
+    }
+  }
+}

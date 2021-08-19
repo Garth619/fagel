@@ -1,0 +1,281 @@
+#testi-videos-wrapper {
+  //padding-top: 27px;
+  @include mq(small_tablet) {
+    //padding-top: 40px;
+  }
+  @include mq(small_laptop) {
+    //padding-top: 57px;
+  }
+  @include mq(large_laptop) {
+    max-width: 1200px;
+    //padding-top: 79px;
+    @include margin_lr();
+  }
+}
+
+#testi-videos {
+  margin-top: 27px;
+  @include flex();
+  flex-wrap: wrap;
+  @include mq(small_tablet) {
+    margin-top: 34px;
+    flex-wrap: nowrap;
+    max-width: 750px;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    max-width: 780px;
+  }
+  @include mq(large_laptop) {
+    max-width: 100%;
+    margin-top: 53px;
+  }
+}
+
+#testi-videos-slider {
+  width: 100%;
+  @include mq(small_tablet) {
+    order: 2;
+    width: calc(100% - 216px);
+  }
+  @include mq(small_laptop) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 0px 23px;
+  }
+  @include mq(large_laptop) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.testi-single-video {
+  padding: 27px 27px 43px;
+  background: $blacktwo;
+  color: $white;
+  @include mq(small_tablet) {
+    padding: 41px;
+  }
+  @include mq(small_laptop) {
+    margin-bottom: 23px;
+    padding: 32px;
+  }
+  @include mq(large_laptop) {
+    margin-bottom: 34px;
+  }
+  span.testi-video-play-button {
+    @include box(71px);
+    @include mq(small_tablet) {
+      @include box(94px);
+    }
+    @include mq(small_laptop) {
+      @include box(87px);
+    }
+    &::after {
+      @include tri(right, 6px, 10px, $white);
+      @include mq(small_tablet) {
+        @include tri(right, 9px, 12px, $white);
+      }
+    }
+    span {
+      @include box(54px);
+      @include mq(small_tablet) {
+        @include box(72px);
+      }
+      @include mq(small_laptop) {
+        @include box(66px);
+      }
+    }
+  }
+  span.testi-single-video-title {
+    display: block;
+    margin-top: 19px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #9dc1ff;
+    @include type(
+      (
+        size: 25px,
+        height: 28px,
+        family: $secondaryfont,
+      )
+    );
+    @include mq(small_tablet) {
+      margin-top: 42px;
+    }
+    @include mq(small_laptop) {
+      margin-top: 27px;
+    }
+  }
+  span.testi-single-video-descr {
+    display: block;
+    margin-top: 15px;
+    @include type(
+      (
+        size: 17px,
+        height: 28px,
+        family: $primaryfont,
+      )
+    );
+  }
+}
+
+.testi-videos-arrow {
+  width: 50%;
+  margin-top: 28px;
+  @include flex();
+  align-items: center;
+  transition: all 200ms ease-in-out;
+  @include type(
+    (
+      size: 15px,
+      family: $primaryfont,
+      weight: 700,
+      color: $black,
+      transform: uppercase,
+    )
+  );
+  &:hover {
+    color: $red;
+  }
+  &::before,
+  &::after {
+    transition: all 200ms ease-in-out;
+  }
+  @include mq(small_tablet) {
+    width: 108px;
+  }
+  @include mq(small_laptop) {
+    display: none;
+  }
+}
+
+#testi-videos-arrow-left {
+  &::before {
+    margin-right: 6px;
+    @include contentdisplay();
+    @include tri(left, 4px, 6px, $black);
+  }
+  &:hover {
+    &::before {
+      @include tri(left, 4px, 6px, $red);
+    }
+  }
+  @include mq(small_tablet) {
+    order: 1;
+  }
+}
+
+#testi-videos-arrow-right {
+  justify-content: flex-end;
+  &::after {
+    margin-left: 6px;
+    @include contentdisplay();
+    @include tri(right, 4px, 6px, $black);
+  }
+  &:hover {
+    &::after {
+      @include tri(right, 4px, 6px, $red);
+    }
+  }
+  @include mq(small_tablet) {
+    order: 3;
+  }
+}
+
+#testi-text {
+  margin-top: 70px;
+  @include mq(large_laptop) {
+    max-width: 1200px;
+    @include margin_lr();
+  }
+}
+
+#testi-text-inner {
+  margin-top: 28px;
+  @include mq(small_tablet) {
+    margin-top: 0px;
+  }
+}
+
+.testi-text-single {
+  text-align: center;
+  padding: 45px 0px;
+  border-bottom: 1px solid #bababa;
+  &:last-of-type {
+    padding-bottom: 20px;
+    border: none;
+    @include mq(large_laptop) {
+      padding-bottom: 45px;
+    }
+  }
+  @include mq(small_tablet) {
+    @include flex();
+    padding: 45px 0px;
+    align-items: center;
+  }
+  @include mq(small_laptop) {
+    padding: 63px 60px;
+  }
+  @include mq(large_laptop) {
+    padding: 83px 120px;
+  }
+  .testi-text-left {
+    @include margin_lr();
+    @include box(153px, 110px);
+    @include mq(small_tablet) {
+      flex-shrink: 0;
+    }
+
+    img {
+      &:first-of-type {
+        opacity: 0.1;
+      }
+      &:last-of-type {
+        position: relative;
+        top: -72px;
+      }
+    }
+  }
+  .testi-text-right {
+    margin-top: 28px;
+    @include mq(small_tablet) {
+      flex-grow: 1;
+      margin-top: 0px;
+      padding-left: 50px;
+    }
+    @include mq(small_laptop) {
+      padding-left: 90px;
+    }
+    @include mq(large_laptop) {
+      padding-left: 130px;
+    }
+    .testi-descrip {
+      @include type(
+        (
+          size: 18px,
+          height: 30px,
+          family: $secondaryfont,
+        )
+      );
+      @include mq(small_tablet) {
+        text-align: left;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+    }
+    span.testi-name {
+      display: block;
+      padding-top: 20px;
+      @include type(
+        (
+          size: 16px,
+          height: 18px,
+          family: $primaryfont,
+          weight: 700,
+        )
+      );
+    }
+  }
+}

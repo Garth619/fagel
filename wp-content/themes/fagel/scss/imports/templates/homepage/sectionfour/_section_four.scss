@@ -1,0 +1,89 @@
+#section-four {
+  padding: 63px 40px 60px;
+  @include mq(small_tablet) {
+    padding: 69px 43px 60px;
+  }
+  @include mq(small_laptop) {
+    padding: 86px 43px 120px;
+  }
+  @include mq(large_laptop) {
+    padding: 145px 43px 120px;
+  }
+  @include mq(monitor) {
+    padding: 127px 43px 120px;
+  }
+}
+
+span#sec-four-header {
+  display: block;
+  @include type(
+    (
+      size: 38px,
+      height: 42px,
+      family: $secondaryfont,
+      color: $black,
+    )
+  );
+  @include mq(small_tablet) {
+    @include quick_type(45px, 55px, null);
+  }
+  @include mq(small_laptop) {
+    text-align: center;
+    max-width: 685px;
+    @include margin_lr();
+  }
+  @include mq(large_laptop) {
+    max-width: 875px;
+  }
+  @include mq(monitor) {
+    max-width: 1005px;
+    @include quick_type(50px, 60px, null);
+  }
+  &::after {
+    background: $red;
+    margin-top: 32px;
+    @include contentdisplay();
+    @include box(95px, 3px);
+    @include mq(small_tablet) {
+      margin-top: 40px;
+    }
+    @include mq(small_laptop) {
+      @include margin_lr();
+    }
+  }
+}
+
+#sec-four-inner {
+  padding: 37px 0 0;
+  @include mq(small_laptop) {
+    padding: 57px 0 0;
+    max-width: 980px;
+    @include margin_lr();
+    @include flex(space-between);
+  }
+  @include mq(large_laptop) {
+    max-width: 1140px;
+  }
+  @include mq(monitor) {
+    max-width: 1380px;
+  }
+  &.content {
+    font-size: 16px;
+    line-height: 26px;
+    @include mq(large_laptop) {
+      font-size: 18px;
+      line-height: 30px;
+    }
+    blockquote {
+      font-size: 25px;
+      line-height: 35px;
+    }
+  }
+}
+
+.sec-four-col {
+  flex-basis: 47%;
+  @include mq(monitor) {
+    flex-basis: 43%;
+  }
+}

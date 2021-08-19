@@ -1,0 +1,284 @@
+// navigation - refer to the resize functions in js->custom.js
+
+// nav
+
+header.no-banner {
+  nav {
+    ul.menu {
+      > li {
+        > a {
+          color: $white;
+          @include mq(small_laptop) {
+            color: #000;
+          }
+          @include mq(large_laptop) {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+nav {
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98),
+    opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+  background: $blacktwo;
+  padding: 50px 0px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  @include box(100%, 100vh);
+  @include abs(174px, null, null, 0);
+  @include mq(small_tablet) {
+    width: 384px;
+    transform: translate(100%, 0px);
+    @include fixed(77px, 0, null, auto);
+  }
+  @include mq(small_laptop) {
+    background: transparent;
+    overflow-y: visible;
+    height: auto;
+    top: 92px;
+    transform: translateY(0px);
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+    width: 100%;
+    padding: 0 76px;
+    @include abs(92px, null, null, 0);
+  }
+  @include mq(large_laptop) {
+    position: static;
+    padding: 30px 35px 0;
+    width: auto;
+    flex-grow: 1;
+    border-bottom: 1px solid #4e5153;
+  }
+  @include mq(monitor) {
+    padding: 52px 35px 0 95px;
+  }
+
+  ul {
+    list-style: none;
+    li {
+      a {
+        cursor: pointer;
+        display: block;
+        transition: color 200ms ease-in-out;
+        @include type(
+          (
+            size: 17px,
+            height: 20px,
+            family: $primaryfont,
+            color: $white,
+            weight: 700,
+          )
+        );
+        @include mq(small_laptop) {
+          @include quick_type(14px, 19px, null);
+        }
+        @include mq(small_monitor) {
+          @include quick_type(17px, 21px, null);
+        }
+        &:hover {
+          @include mq(small_laptop) {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    &.menu {
+      padding-bottom: 65px;
+      @include mq(small_laptop) {
+        padding-bottom: 0;
+        @include flex(space-between);
+      }
+      > li {
+        padding-bottom: 29px;
+        @include mq(small_laptop) {
+          padding-bottom: 0;
+        }
+        &.menu-item-has-children {
+          position: relative;
+          @include mq(small_laptop) {
+            padding-bottom: 35px;
+          }
+          &:hover {
+            @include mq(small_laptop) {
+              > a {
+                color: $red;
+                &::after {
+                  content: "-";
+                }
+              }
+              > ul {
+                &.sub-menu {
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
+            }
+          }
+          > a {
+            &::after {
+              content: "+";
+              display: inline-block;
+              width: 10px;
+              margin-left: 4px;
+            }
+            &.active {
+              color: $red;
+              &::after {
+                content: "-";
+              }
+            }
+          }
+        }
+        &.current-menu-item,
+        &.current-menu-ancestor {
+          > a {
+            color: $red;
+          }
+        }
+        &.current-menu-ancestor {
+          > a {
+            &::after {
+              @include mq(small_laptop) {
+                content: "-";
+              }
+            }
+          }
+        }
+        &:last-of-type {
+          ul {
+            &.sub-menu {
+              @include mq(small_laptop) {
+                right: -60px;
+                left: auto;
+              }
+              @include mq(large_laptop) {
+                right: auto;
+                left: -24px;
+              }
+              @include mq(small_monitor) {
+                left: -43px;
+              }
+            }
+          }
+        }
+        &.active {
+          padding-bottom: 15px;
+          @include mq(small_laptop) {
+            padding: 0;
+          }
+        }
+        a {
+          padding: 0 47px;
+          @include mq(small_laptop) {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    &.sub-menu {
+      background: $blackthree;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      margin-top: 0px;
+      padding: 0;
+      //transition: max-height 500ms cubic-bezier(0.17, 0.66, 0.34, 0.98),
+      //opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+      @include mq(small_laptop) {
+        //display: none;
+        max-height: 3000px;
+        background: $blacktwo;
+        width: 285px;
+        padding: 22px 0;
+        transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+        @include abs(30px, null, null, -24px);
+      }
+      @include mq(large_laptop) {
+        top: 47px;
+      }
+      @include mq(small_monitor) {
+        top: 54px;
+        padding: 27px 0;
+        width: 385px;
+        left: -43px;
+      }
+      &.active {
+        max-height: 3000px;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 12px;
+        padding: 32px 0;
+      }
+      li {
+        padding-bottom: 23px;
+        &:last-of-type {
+          padding-bottom: 0px;
+        }
+        &.current-menu-item {
+          a {
+            color: $red;
+          }
+        }
+        a {
+          padding: 0 47px;
+          @include mq(small_laptop) {
+            padding: 0 25px;
+          }
+          @include mq(small_monitor) {
+            padding: 0 45px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// tablet styles
+
+nav.nav_tablet {
+  &.sticky {
+    @include fixed(75px, null, null, 0);
+    @include mq(small_tablet) {
+      @include fixed(77px, 0, null, auto);
+    }
+  }
+  &.open {
+    transform: translateY(0px);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// desktop styles
+
+nav.nav_desktop {
+  ul {
+    &.menu {
+      > li {
+        &.menu-item-has-children {
+          > a {
+            &:hover {
+              &::after {
+                content: "-";
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

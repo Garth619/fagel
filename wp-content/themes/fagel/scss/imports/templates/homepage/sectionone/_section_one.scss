@@ -1,0 +1,684 @@
+#section-one {
+  padding: 22px 0px 0;
+  position: relative;
+  @include mq(small_tablet) {
+    margin-top: 76px;
+    padding: 44px 0px 0;
+  }
+  @include mq(small_laptop) {
+    margin-top: -77px;
+    padding: 76px 0px 0;
+  }
+  @include mq(large_laptop) {
+  }
+  @include mq(monitor) {
+    margin-top: -106px;
+    padding: 104px 0px 0;
+  }
+}
+
+body.sticky {
+  #section-one {
+    margin-top: 75px;
+    @include mq(small_laptop) {
+      margin-top: -77px;
+    }
+    @include mq(monitor) {
+      margin-top: -106px;
+    }
+  }
+}
+
+#sec-one-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  @include mq(small_tablet) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto;
+    gap: 0px 0px;
+    grid-template-areas:
+      "sec-one-video-wrapper sec-one-video-wrapper"
+      "sec-one-titles sec-one-titles"
+      "sec-one-sp sec-one-news";
+    overflow-y: hidden;
+  }
+  @include mq(small_laptop) {
+    grid-template-columns: 67% 33%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "sec-one-titles sec-one-news"
+      "sec-one-sp sec-one-video-wrapper";
+  }
+  @include mq(large_laptop) {
+    grid-template-columns: 71% 29%;
+  }
+
+  @include mq(monitor) {
+    grid-template-columns: 50% 28% auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "sec-one-titles sec-one-titles sec-one-news"
+      "sec-one-sp sec-one-video-wrapper sec-one-news";
+  }
+}
+
+#sec-one-video-wrapper {
+  background: $black;
+  text-align: center;
+  padding: 22px;
+  max-width: 464px;
+  width: calc(100% - 46px);
+  position: relative;
+  grid-area: sec-one-video-wrapper;
+  @include margin_lr();
+
+  @include mq(small_tablet) {
+    padding: 27px 27px 37px;
+    max-width: 580px;
+  }
+  @include mq(small_laptop) {
+    margin: 0;
+    height: 386px;
+    width: auto;
+    max-width: 100%;
+    background: $blacktwo;
+  }
+  @include mq(large_laptop) {
+    padding: 34px 27px 27px;
+  }
+  @include mq(monitor) {
+    height: 100%;
+  }
+  &::before {
+    @include mq(small_laptop) {
+      transform: rotate(-45deg);
+      @include abs(null, null, 0, 0);
+      bottom: -1px;
+      left: -32px;
+      @include tri(right, 38px, 38px, #283338);
+      @include contentdisplay();
+    }
+  }
+  &:hover {
+    .vid-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      span {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  span.vid-title {
+    display: block;
+    @include type(
+      (
+        size: 16px,
+        height: 21px,
+        family: $primaryfont,
+        color: $white,
+        weight: 700,
+      )
+    );
+
+    &#title-one {
+      margin-bottom: 20px;
+      @include mq(small_tablet) {
+        margin-bottom: 25px;
+        @include quick_type(25px, 25px, null);
+      }
+      @include mq(small_laptop) {
+        @include quick_type(21px, 23px, null);
+      }
+      @include mq(monitor) {
+        margin-bottom: 30px;
+        @include quick_type(28px, 31px, null);
+      }
+    }
+    &#title-two {
+      margin-top: 24px;
+      max-width: 300px;
+      @include margin_lr();
+      @include mq(small_tablet) {
+        max-width: 100%;
+        @include quick_type(19px, 22px, null);
+      }
+      @include mq(small_laptop) {
+        @include quick_type(18px, 25px, null);
+      }
+      @include mq(monitor) {
+        @include quick_type(24px, 33px, null);
+      }
+      span {
+        display: inline-block;
+        &:first-of-type {
+          @include mq(small_tablet) {
+            margin-right: 16px;
+          }
+        }
+        a {
+          display: inline-block;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+span#sec-one-play-button {
+  @include box(58px);
+  @include mq(small_tablet) {
+    @include box(100px);
+  }
+  @include mq(small_laptop) {
+    @include box(78px);
+  }
+  @include mq(monitor) {
+    margin-bottom: 30px;
+    @include box(100px);
+  }
+  &::after {
+    @include tri(right, 5px, 7px, $white);
+    @include mq(small_tablet) {
+      @include tri(right, 9px, 12px, $white);
+    }
+    @include mq(small_laptop) {
+      @include tri(right, 6px, 10px, $white);
+    }
+    @include mq(monitor) {
+      @include tri(right, 9px, 12px, $white);
+    }
+  }
+  span {
+    @include box(45px);
+    @include mq(small_tablet) {
+      @include box(74px);
+    }
+    @include mq(small_laptop) {
+      @include box(58px);
+    }
+    @include mq(monitor) {
+      @include box(74px);
+    }
+  }
+}
+
+.video-container {
+  position: relative;
+  img {
+    &#sec-one-vid-img {
+      border: 4px solid $white;
+      @include mq(small_tablet) {
+        max-width: 454px;
+        @include margin_lr();
+      }
+      @include mq(small_laptop) {
+        max-width: 365px;
+      }
+      @include mq(monitor) {
+        max-width: 457px;
+      }
+    }
+  }
+}
+
+#sec-one-titles {
+  margin-top: 40px;
+  margin-bottom: 66px;
+  padding: 0 43px;
+  text-align: center;
+  grid-area: sec-one-titles;
+  @include mq(small_tablet) {
+    margin-bottom: 72px;
+  }
+  @include mq(small_laptop) {
+    margin-top: 137px;
+    margin-bottom: 0px;
+    max-width: 630px;
+  }
+  @include mq(large_laptop) {
+    margin-top: 112px;
+    padding-bottom: 209px;
+    margin-left: 95px;
+  }
+  @include mq(monitor) {
+    margin-top: 135px;
+    padding-bottom: 0px;
+    margin-bottom: 175px;
+    max-width: 980px;
+    margin-left: 53px;
+  }
+  span {
+    color: $white;
+    display: block;
+    &#sec-one-subtitle {
+      padding: 0 10px;
+      max-width: 336px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 15px,
+          height: 20px,
+          spacing: 0.75px,
+          family: $primaryfont,
+          weight: 700,
+          align: center,
+          transform: uppercase,
+        )
+      );
+      @include mq(small_tablet) {
+        font-size: 16px;
+        max-width: 100%;
+      }
+      @include mq(monitor) {
+        font-size: 22px;
+      }
+    }
+    &#sec-one-title {
+      margin-top: 15px;
+      max-width: 450px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 45px,
+          height: 50px,
+          family: $secondaryfont,
+          align: center,
+        )
+      );
+      @include mq(small_tablet) {
+        max-width: 570px;
+        margin-top: 12px;
+        @include quick_type(59px, 65px, null);
+      }
+      @include mq(monitor) {
+        max-width: 770px;
+        margin-top: 30px;
+        @include quick_type(80px, 77px, null);
+      }
+    }
+  }
+}
+
+a#sec-one-button {
+  margin-top: 20px;
+  @include mq(monitor) {
+    margin-top: 41px;
+  }
+}
+
+#sec-one-sp {
+  background: $blue;
+  padding-bottom: 55px;
+  grid-area: sec-one-sp;
+  position: relative;
+  z-index: 1;
+  @include mq(small_tablet) {
+    padding-bottom: 47px;
+  }
+  @include mq(small_laptop) {
+    height: 372px;
+    margin-top: -35px;
+    padding-bottom: 0px;
+  }
+  @include mq(large_laptop) {
+    margin-top: -103px;
+    height: 439px;
+  }
+  @include mq(monitor) {
+    margin-top: -49px;
+    height: 474px;
+  }
+}
+
+#sec-one-sp-slider {
+  @include mq(small_laptop) {
+    @include flex();
+    height: 100%;
+  }
+}
+
+.sec-one-single-sp {
+  text-align: center;
+  padding: 47px;
+  @include mq(small_tablet) {
+    padding: 27px 27px 16px;
+  }
+  @include mq(small_laptop) {
+    flex-basis: 33.3333%;
+    padding: 51px 27px 27px;
+    border-right: 1px solid #101dbf;
+  }
+  @include mq(large_laptop) {
+    padding: 71px 40px 27px;
+  }
+  @include mq(monitor) {
+    padding: 82px 25px 27px;
+  }
+  svg,
+  img {
+    display: block;
+    @include box(47px, 56px);
+    @include margin_lr();
+    @include mq(small_laptop) {
+      @include box(38px, 45px);
+    }
+    @include mq(large_laptop) {
+      @include box(44px, 53px);
+    }
+  }
+  span {
+    display: block;
+    color: $white;
+    font-family: $primaryfont;
+    &.sp-title {
+      margin-top: 27px;
+      @include type(
+        (
+          size: 22px,
+          height: 26px,
+          weight: 700,
+        )
+      );
+      @include mq(small_laptop) {
+        @include quick_type(18px, 20px, null);
+      }
+      @include mq(large_laptop) {
+        @include quick_type(22px, 25px, null);
+        margin-top: 44px;
+      }
+      @include mq(monitor) {
+        @include quick_type(25px, 30px, null);
+      }
+    }
+    &.sp-description {
+      margin-top: 18px;
+      max-width: 370px;
+      @include margin_lr();
+      @include quick_type(14px, 22px, null);
+      @include mq(small_tablet) {
+        max-width: 304px;
+      }
+      @include mq(large_laptop) {
+        margin-top: 33px;
+        max-width: 232px;
+      }
+    }
+  }
+}
+
+#sec-one-sp-arrows {
+  @include flex(center, center);
+  @include mq(small_tablet) {
+    margin-top: 37px;
+  }
+  @include mq(small_laptop) {
+    display: none;
+  }
+  span.sp-arrow {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    @include box(6px, 10px);
+    &:hover {
+      &::before,
+      &::after {
+        background: $red;
+      }
+    }
+    &::before,
+    &::after {
+      background: $white;
+      position: absolute;
+      left: 0;
+      transition: all 200ms ease-in-out;
+      @include box(100%, 1px);
+      @include contentdisplay();
+    }
+    &::before {
+      top: 2px;
+    }
+    &::after {
+      top: 6px;
+    }
+    &#sp-arrow-left {
+      &::before {
+        transform: rotate(-45deg);
+      }
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+    &#sp-arrow-right {
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+#sp-arrow-counter {
+  margin: 0 35px;
+  @include type(
+    (
+      size: 15px,
+      family: $primaryfont,
+      color: $white,
+      weight: 700,
+      align: center,
+      spacing: 0.75px,
+    )
+  );
+}
+
+#sec-one-news {
+  grid-area: sec-one-news;
+  background: $blacktwo;
+
+  @include mq(small_laptop) {
+    background: transparent;
+    padding-left: 30px;
+    height: 526px;
+    overflow: hidden;
+    @include flex(center);
+  }
+  @include mq(large_laptop) {
+    padding-left: 0px;
+    height: 559px;
+    @include flex(center);
+  }
+  @include mq(monitor) {
+    height: calc(100% - 55px);
+  }
+
+  #sec-one-news-slider {
+    padding: 59px 0px 50px;
+    @include mq(small_tablet) {
+      padding: 78px 64px 43px;
+    }
+    @include mq(small_laptop) {
+      padding: 88px 0px 20px;
+      width: 206px;
+    }
+    @include mq(large_laptop) {
+      padding: 62px 0px 51px;
+    }
+    @include mq(monitor) {
+      width: 223px;
+      padding: 43px 0px 51px;
+    }
+    .slick-dots {
+      position: static;
+      margin-top: 30px;
+      @include mq(small_tablet) {
+        margin-top: 41px;
+      }
+      li.slick-active {
+        button {
+          &:before {
+            color: $red;
+          }
+        }
+      }
+      li:hover {
+        button {
+          &:before {
+            color: $red;
+          }
+        }
+      }
+      li {
+        margin: 0 5px;
+        width: 15px;
+        button {
+          width: 15px;
+          &:before {
+            width: 15px;
+            opacity: 1;
+            color: $white;
+            font-size: 33px;
+            transition: all 200ms ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sec-one-news-single {
+  @include mq(small_laptop) {
+    height: 190px;
+    padding-bottom: 17px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  @include mq(monitor) {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    height: 210px;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      span.sec-one-news-title {
+        color: $red;
+      }
+    }
+    .sec-one-news-img {
+      max-width: 233px;
+      height: 142px;
+      overflow: hidden;
+      position: relative;
+      padding-top: 138 / 233 * 100%;
+      @include margin_lr();
+      @include mq(small_laptop) {
+        max-width: 206px;
+        height: 126px;
+      }
+      @include mq(monitor) {
+        max-width: 223px;
+        height: 146px;
+      }
+      img {
+        object-fit: cover;
+        @include box(100%);
+        @include image();
+        @include margin_lr();
+        @include abs(0, null, null, 0);
+      }
+    }
+    span.sec-one-news-title {
+      display: block;
+      margin-top: 15px;
+      max-width: 233px;
+      transition: all 200ms ease-in-out;
+      @include margin_lr();
+      @include type(
+        (
+          size: 14px,
+          height: 17px,
+          align: left,
+          family: $primaryfont,
+          color: $white,
+        )
+      );
+      @include mq(small_tablet) {
+        text-align: center;
+      }
+      @include mq(small_laptop) {
+        text-align: left;
+        max-width: 206px;
+        margin-top: 12px;
+      }
+    }
+  }
+}
+
+#sec-one-news-arrows {
+  display: none;
+  @include mq(small_laptop) {
+    margin-top: 90px;
+    position: relative;
+    right: -49px;
+    @include flex(space-between, center, column);
+    @include box(29px, 387px);
+  }
+  @include mq(large_laptop) {
+    margin-top: 63px;
+  }
+  @include mq(monitor) {
+    height: 877px;
+  }
+  .news-arrow {
+    cursor: pointer;
+    &#news-arrow-left {
+      transition: all 200ms ease-in-out;
+      @include tri(up, 8px, 10px, $white);
+      &:hover {
+        @include tri(up, 8px, 10px, $red);
+      }
+    }
+    &#news-arrow-right {
+      @include tri(down, 8px, 10px, $white);
+      &:hover {
+        @include tri(down, 8px, 10px, $red);
+      }
+    }
+  }
+}
+
+img#sec-one-hero-img {
+  object-fit: cover;
+  object-position: top;
+  @include abs(0, null, null, 0);
+  @include image();
+  @include box(100%);
+  @include mq(small_laptop) {
+    //height: 563px;
+    left: -80px;
+    max-width: inherit;
+    @include box(auto);
+  }
+  @media screen and (min-width: 1300px) {
+    left: 0px;
+  }
+  @include mq(large_laptop) {
+    left: -120px;
+  }
+  @media screen and (min-width: 1480px) {
+    left: 0px;
+    @include box(100%, 90%);
+  }
+  @include mq(monitor) {
+    height: calc(100% - 55px);
+  }
+}
