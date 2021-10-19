@@ -70,28 +70,23 @@
     }
   }
   .single-video-inner {
-    a {
+    .single-video-thumb {
+      border: 12px solid $blacktwo;
+    }
+    span.single-video-title {
       display: block;
-      position: relative;
-      text-decoration: none;
-      .single-video-thumb {
-        border: 12px solid $blacktwo;
-      }
-      span.single-video-title {
-        display: block;
-        margin-top: 20px;
-        padding: 0 20px;
-        @include type(
-          (
-            size: 18px,
-            height: 27px,
-            family: $primaryfont,
-            weight: 700,
-            align: center,
-            color: $black,
-          )
-        );
-      }
+      margin-top: 20px;
+      padding: 0 20px;
+      @include type(
+        (
+          size: 18px,
+          height: 27px,
+          family: $primaryfont,
+          weight: 700,
+          align: center,
+          color: $black,
+        )
+      );
     }
   }
 }

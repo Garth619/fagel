@@ -17,7 +17,11 @@
 
       <div id='sec-three-arrows'>
 
-        <span id='sec-three-arrow-left' class='sec-three-arrow'></span><!-- sec-three-arrow-left -->
+        <div id='sec-three-arrow-left' class='sec-three-arrow'>
+
+          <?php echo file_get_contents(get_template_directory() . '/images/arrow-new.svg'); ?>
+
+        </div><!-- sec-three-arrow-left -->
 
         <span id='sec-three-arrow-counter'>
 
@@ -25,7 +29,11 @@
 
         </span><!-- sec-three-arrow-counter -->
 
-        <span id='sec-three-arrow-right' class='sec-three-arrow'></span><!-- sec-three-arrow-right -->
+        <div id='sec-three-arrow-right' class='sec-three-arrow'>
+
+          <?php echo file_get_contents(get_template_directory() . '/images/arrow-new.svg'); ?>
+
+        </div><!-- sec-three-arrow-right -->
 
       </div><!-- sec-three-arrows -->
 
@@ -52,8 +60,20 @@
         <span class='sec-three-single-desc'><?php the_sub_field('description');?></span>
         <!-- sec-three-single-desc -->
 
+        <?php
+
+    if (is_page(4436) || is_page('gracias') || is_singular('espanol')): ?>
+
+        <a class='sec-three-single-button' href='<?php the_sub_field('case_results_link');?>'>Detalles</a>
+        <!-- sec-three-single-button -->
+
+        <?php else: ?>
+
         <a class='sec-three-single-button' href='<?php the_sub_field('case_results_link');?>'>Details</a>
         <!-- sec-three-single-button -->
+        <!-- class -->
+
+        <?php endif;?>
 
       </div><!-- sec-three-single -->
 

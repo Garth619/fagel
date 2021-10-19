@@ -1,6 +1,8 @@
 <?php
 
-/* Template Name: Meet the Team */
+/* Template Name: Meet the Team
+
+Template Post Type: page, espanol */
 
 get_header();?>
 

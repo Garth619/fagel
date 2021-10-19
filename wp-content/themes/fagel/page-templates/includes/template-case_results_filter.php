@@ -45,11 +45,22 @@ if ($posts):
 
         setup_postdata($post);
 
-        // removes the $ from the acf amount
-        $amount = str_replace(['$'], '', get_field('case_results_amount'));
+        $acf_amount = get_field('case_results_amount');
+
+        // remove spaces, dollar signs, commas, letters
+        $searchVal = array("/\s+/", "/\\$/", "/\,/", "/[a-zA-Z]/");
+        $amount = floatval(preg_replace($searchVal, "", $acf_amount));
+        $amountvalue = $amount * 1000000;
+
+        if ($amount > 1000) {
+            // ignore six and seven figures that were manually typed
+            $amountvalue = $amount;
+        }
+
+        //var_dump($amount . " " . $amountvalue);
 
         // build an associative array
-        $amount_int[$post->ID] = $amount;
+        $amount_int[$post->ID] = $amountvalue;
 
     endforeach;
 
@@ -62,6 +73,8 @@ if ($posts):
     // reverse order while preserving keys (post ids)
 
     $amount_int = array_reverse($amount_int, true);
+
+    //echo "<pre>" . print_r($amount_int, true) . "</pre>";
 
     // pull the post ids out (according to the amount) into an array (this will be used below as the orderby postid array)
 

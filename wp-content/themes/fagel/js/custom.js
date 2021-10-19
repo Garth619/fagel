@@ -121,7 +121,7 @@ jQuery(document).ready(function ($) {
 
   createWaypoint("section-two", "#section-two", "visible", 200, null, true);
 
-  createWaypoint("section-three", "#section-three", "visible", 200, null, true);
+  createWaypoint("section-three", "#section-three", "visible", 400, null, true);
 
   createWaypoint("section-four", "#section-four", "visible", 400, null, true);
 
@@ -175,7 +175,7 @@ jQuery(document).ready(function ($) {
         },
       },
       {
-        breakpoint: 1800,
+        breakpoint: 1799,
         settings: {
           adaptiveHeight: false,
           slidesToShow: 4,
@@ -456,4 +456,17 @@ jQuery(document).ready(function ($) {
       }
     }, 100)
   );
+
+  // var $div = $("#gform_wrapper_4");
+  // var observer = new MutationObserver(function (mutations) {
+  //   mutations.forEach(function (mutation) {
+  //     if (mutation.attributeName === "class") {
+  //       var attributeValue = $(mutation.target).prop(mutation.attributeName);
+  //       console.log("Class attribute changed to:", attributeValue);
+  //     }
+  //   });
+  // });
+  // observer.observe($div[0], {
+  //   attributes: true,
+  // });
 }); // document ready

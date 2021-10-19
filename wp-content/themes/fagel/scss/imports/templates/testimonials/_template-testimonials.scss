@@ -189,6 +189,9 @@
     max-width: 1200px;
     @include margin_lr();
   }
+  &.removemargin {
+    margin-top: 0;
+  }
 }
 
 #testi-text-inner {
@@ -277,5 +280,11 @@
         )
       );
     }
+  }
+}
+
+body.page-id-11422 {
+  .testi-text-single .testi-text-left img:last-of-type {
+    display: none;
   }
 }

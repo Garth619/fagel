@@ -1,6 +1,8 @@
 <?php
 
-/* Template Name: Testimonials */
+/* Template Name: Testimonials
+
+Template Post Type: page, espanol */
 
 get_header();?>
 
@@ -10,6 +12,8 @@ get_header();?>
 
   <div id='page-container'>
 
+    <?php if (have_rows('video_testimonials')): ?>
+
     <div id='testi-videos-wrapper'>
 
       <span class='sub-title'><?php the_field('video_testimonials_title');?></span><!-- sub-title -->
@@ -18,14 +22,13 @@ get_header();?>
 
         <div id='testi-videos-slider'>
 
-          <?php if (have_rows('video_testimonials')): ?>
           <?php while (have_rows('video_testimonials')): the_row();?>
 
           <div class='testi-single-video'>
 
             <div class='testi-single-video-thumb video-container'>
 
-              <a href='https://www.youtube.com/embed/<?php the_sub_field('youtube_id');?>' data-lity>
+              <div data-lity-target='https://www.youtube.com/embed/<?php the_sub_field('youtube_id');?>' data-lity>
 
                 <img class='vid-thumb' src="https://img.youtube.com/vi/<?php the_sub_field('youtube_id');?>/0.jpg" />
 
@@ -39,7 +42,7 @@ get_header();?>
 
                 </div><!-- vid-overlay -->
 
-              </a>
+              </div>
 
             </div><!-- testi-single-video-thumb -->
 
@@ -53,8 +56,6 @@ get_header();?>
 
           <?php endwhile;?>
 
-          <?php endif;?>
-
         </div><!-- testi-videos-slider -->
 
         <span id='testi-videos-arrow-left' class='testi-videos-arrow'>Prev</span><!-- testi-videos-arrow-left -->
@@ -65,14 +66,23 @@ get_header();?>
 
     </div><!-- testi-videos-wrapper -->
 
-    <div id='testi-text'>
+    <?php endif;?>
+
+    <?php if (!have_rows('video_testimonials')) {
+
+    $removeMargin = 'removemargin';
+
+}?>
+
+    <?php if (have_rows('testimonials')): ?>
+
+    <div id='testi-text' class='<?php echo $removeMargin; ?>'>
 
       <span class='sub-title'><?php the_field('testimonials_title');?></span>
       <!-- sub-title -->
 
       <div id='testi-text-inner'>
 
-        <?php if (have_rows('testimonials')): ?>
         <?php while (have_rows('testimonials')): the_row();?>
 
         <div class='testi-text-single'>
@@ -101,11 +111,11 @@ get_header();?>
 
         <?php endwhile;?>
 
-        <?php endif;?>
-
       </div><!-- testi-text-inner -->
 
     </div><!-- testi-text -->
+
+    <?php endif;?>
 
   </div><!-- page-container -->
 

@@ -10,7 +10,7 @@
 
         <div id='sec-one-video' class="video-container">
 
-          <a href='https://www.youtube.com/embed/<?php the_field('sec_one_youtube_id');?>' data-lity>
+          <div data-lity-target='https://www.youtube.com/embed/<?php the_field('sec_one_youtube_id');?>' data-lity>
 
             <div class='vid-overlay'>
 
@@ -31,7 +31,7 @@
 
             <?php }?>
 
-          </a>
+          </div>
 
         </div><!-- sec-one-video -->
 
@@ -88,11 +88,19 @@
 
       <div id='sec-one-sp-arrows'>
 
-        <span id='sp-arrow-left' class='sp-arrow'></span><!-- sp-arrow-left -->
+        <div id='sp-arrow-left' class='sp-arrow'>
+
+          <?php echo file_get_contents(get_template_directory() . '/images/arrow-new.svg'); ?>
+
+        </div><!-- sp-arrow-left -->
 
         <span id='sp-arrow-counter'>01 - 03</span><!-- sp-arrow-counter -->
 
-        <span id='sp-arrow-right' class='sp-arrow'></span><!-- sp-arrow-right -->
+        <div id='sp-arrow-right' class='sp-arrow'>
+
+          <?php echo file_get_contents(get_template_directory() . '/images/arrow-new.svg'); ?>
+
+        </div><!-- sp-arrow-right -->
 
       </div><!-- sec-one-sp-arrows -->
 
@@ -102,32 +110,37 @@
 
       <div id='sec-one-news-slider'>
 
-        <?php $sec_one_news = get_field('sec_one_news');?>
-        <?php if ($sec_one_news): ?>
-        <?php foreach ($sec_one_news as $post): ?>
+        <?php if (have_rows('sec_one_news')): ?>
+        <?php while (have_rows('sec_one_news')): the_row();?>
+        <?php $post_object = get_sub_field('case_result_article');?>
+        <?php if ($post_object): ?>
+        <?php $post = $post_object;?>
         <?php setup_postdata($post);?>
-        <div class='sec-one-news-single'>
+
+        <div class='sec-one-single'>
 
           <a href='<?php the_permalink();?>'>
 
-            <div class='sec-one-news-img'>
+            <?php $case_results_image = get_sub_field('case_results_image');?>
+            <?php if ($case_results_image) {?>
+            <img class='sec-one-single-img' src="<?php echo $case_results_image['url']; ?>"
+              alt="<?php echo $case_results_image['alt']; ?>" />
+            <?php }?>
 
-              <?php if (get_the_post_thumbnail()) {?>
+            <span class='sec-one-single-title'><?php the_sub_field('case_results_amount');?></span>
+            <!-- sec-one-single-title -->
 
-              <?php the_post_thumbnail();?>
-
-              <?php }?>
-
-            </div><!-- sec-one-news-img -->
-
-            <span class='sec-one-news-title'><?php echo wp_trim_words(get_the_title(), 7, '...'); ?></span>
-            <!-- sec-one-news-title -->
+            <span class='sec-one-single-descrip'><?php the_title();?></span>
+            <!-- sec-one-single-descrip -->
 
           </a>
 
         </div><!-- sec-one-news-single -->
-        <?php endforeach;?>
+
         <?php wp_reset_postdata();?>
+        <?php endif;?>
+
+        <?php endwhile;?>
         <?php endif;?>
 
       </div><!-- sec-one-news-slider -->

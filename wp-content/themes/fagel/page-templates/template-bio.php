@@ -1,6 +1,8 @@
 <?php
 
-/* Template Name: Att Bio */
+/* Template Name: Att Bio
+
+Template Post Type: page, espanol */
 
 get_header();?>
 

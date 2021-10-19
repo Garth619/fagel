@@ -91,7 +91,22 @@ remove_action('admin_print_styles', 'print_emoji_styles');
 
 register_nav_menus(array(
     'main_menu' => 'Main Menu',
+    'spanish_menu' => 'Spanish Menu',
 ));
+
+/* ACF - Add Default Images Option
+-------------------------------------------------------------- */
+
+add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field');
+function add_default_value_to_image_field($field)
+{
+    acf_render_field_setting($field, array(
+        'label' => 'Default Image',
+        'instructions' => 'Appears when creating a new post',
+        'type' => 'image',
+        'name' => 'default_value',
+    ));
+}
 
 /* Widgets
 -------------------------------------------------------------- */

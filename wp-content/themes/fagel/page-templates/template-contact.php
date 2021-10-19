@@ -1,6 +1,8 @@
 <?php
 
-/* Template Name: Contact */
+/* Template Name: Contact
+
+Template Post Type: page, espanol */
 
 get_header();?>
 

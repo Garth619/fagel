@@ -1,6 +1,8 @@
 <?php
 
-/* Template Name: About */
+/* Template Name: About
+
+Template Post Type: page, espanol */
 
 get_header();?>
 

@@ -43,7 +43,11 @@
 
         <div id='sec-five-arrows'>
 
-          <span id='sec-five-arrow-left' class='sec-five-arrow'></span><!-- sec-five-arrow-left -->
+          <div id='sec-five-arrow-left' class='sec-five-arrow'>
+
+            <?php echo file_get_contents(get_template_directory() . '/images/arrow-new.svg'); ?>
+
+          </div><!-- sec-five-arrow-left -->
 
           <span id='sec-five-arrow-counter'>
 
@@ -51,7 +55,11 @@
 
           </span><!-- sec-five-arrow-counter -->
 
-          <span id='sec-five-arrow-right' class='sec-five-arrow'></span><!-- sec-five-arrow-right -->
+          <div id='sec-five-arrow-right' class='sec-five-arrow'>
+
+            <?php echo file_get_contents(get_template_directory() . '/images/arrow-new.svg'); ?>
+
+          </div><!-- sec-five-arrow-right -->
 
         </div><!-- sec-five-arrows -->
 

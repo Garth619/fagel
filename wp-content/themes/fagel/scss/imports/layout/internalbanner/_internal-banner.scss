@@ -9,11 +9,11 @@
         max-width: 550px;
         @include margin_lr();
         @include mq(small_tablet) {
-          padding: 62px 40px 18px;
+          padding: 62px 40px 50px;
           max-width: 700px;
         }
         @include mq(small_laptop) {
-          padding: 178px 40px 18px;
+          padding: 178px 40px 50px;
           max-width: 1130px;
         }
       }
@@ -92,11 +92,11 @@
       }
       &.video-layout-content {
         @include mq(small_laptop) {
-          padding-top: 181px;
+          padding-top: 241px;
           padding-bottom: 85px;
         }
         @include mq(monitor) {
-          padding-top: 241px;
+          //padding-top: 241px;
           padding-bottom: 115px;
         }
       }

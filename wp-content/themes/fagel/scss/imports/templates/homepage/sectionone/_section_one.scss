@@ -150,6 +150,7 @@ body.sticky {
         @include quick_type(19px, 22px, null);
       }
       @include mq(small_laptop) {
+        margin-top: 11px;
         @include quick_type(18px, 25px, null);
       }
       @include mq(monitor) {
@@ -333,7 +334,7 @@ a#sec-one-button {
   }
   @include mq(monitor) {
     margin-top: -49px;
-    height: 474px;
+    height: 505px;
   }
 }
 
@@ -421,46 +422,29 @@ a#sec-one-button {
   @include mq(small_laptop) {
     display: none;
   }
-  span.sp-arrow {
+  .sp-arrow {
     display: block;
     position: relative;
     cursor: pointer;
-    @include box(6px, 10px);
+    margin: 0 10px;
+    @include box(12px, 20px);
     &:hover {
-      &::before,
-      &::after {
-        background: $red;
+      svg {
+        path {
+          fill: $red;
+        }
       }
     }
-    &::before,
-    &::after {
-      background: $white;
-      position: absolute;
-      left: 0;
-      transition: all 200ms ease-in-out;
-      @include box(100%, 1px);
-      @include contentdisplay();
-    }
-    &::before {
-      top: 2px;
-    }
-    &::after {
-      top: 6px;
+    svg {
+      @include box(12px, 20px);
+      path {
+        fill: $white;
+        transition: all 200ms ease-in-out;
+      }
     }
     &#sp-arrow-left {
-      &::before {
-        transform: rotate(-45deg);
-      }
-      &::after {
-        transform: rotate(45deg);
-      }
-    }
-    &#sp-arrow-right {
-      &::before {
-        transform: rotate(45deg);
-      }
-      &::after {
-        transform: rotate(-45deg);
+      svg {
+        transform: rotate(180deg);
       }
     }
   }
@@ -468,6 +452,7 @@ a#sec-one-button {
 
 #sp-arrow-counter {
   margin: 0 35px;
+  display: none;
   @include type(
     (
       size: 15px,
@@ -506,7 +491,8 @@ a#sec-one-button {
       padding: 78px 64px 43px;
     }
     @include mq(small_laptop) {
-      padding: 88px 0px 20px;
+      //padding: 88px 0px 20px;
+      padding: 64px 0px 20px;
       width: 206px;
     }
     @include mq(large_laptop) {
@@ -551,77 +537,144 @@ a#sec-one-button {
         }
       }
     }
+    .slick-active + .slick-active {
+      .sec-one-single {
+        @include mq(small_laptop) {
+          border-bottom: none;
+        }
+        @include mq(monitor) {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+    .slick-active + .slick-active + .slick-active + .slick-active {
+      .sec-one-single {
+        @include mq(monitor) {
+          border-bottom: none;
+        }
+      }
+    }
   }
 }
 
-.sec-one-news-single {
+.sec-one-single {
+  text-align: center;
+  //background: red;
   @include mq(small_laptop) {
-    height: 190px;
+    height: 225px;
+    padding-top: 23px;
     padding-bottom: 17px;
-    margin-bottom: 17px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
   @include mq(monitor) {
-    padding-bottom: 24px;
-    margin-bottom: 24px;
-    height: 210px;
+    height: 230px;
   }
   a {
     text-decoration: none;
-    &:hover {
-      span.sec-one-news-title {
-        color: $red;
-      }
+    display: block;
+  }
+  img.sec-one-single-img {
+    margin-top: 10px;
+    @include image();
+    @include margin_lr();
+  }
+  span {
+    display: block;
+    &.sec-one-single-title {
+      margin-top: 10px;
+      @include type(
+        (
+          size: 40px,
+          height: 45px,
+          family: $secondaryfont,
+          color: #9dc1ff,
+        )
+      );
     }
-    .sec-one-news-img {
-      max-width: 233px;
-      height: 142px;
-      overflow: hidden;
-      position: relative;
-      padding-top: 138 / 233 * 100%;
-      @include margin_lr();
-      @include mq(small_laptop) {
-        max-width: 206px;
-        height: 126px;
-      }
-      @include mq(monitor) {
-        max-width: 223px;
-        height: 146px;
-      }
-      img {
-        object-fit: cover;
-        @include box(100%);
-        @include image();
-        @include margin_lr();
-        @include abs(0, null, null, 0);
-      }
-    }
-    span.sec-one-news-title {
-      display: block;
-      margin-top: 15px;
-      max-width: 233px;
-      transition: all 200ms ease-in-out;
+    &.sec-one-single-descrip {
+      margin-top: 20px;
+      max-width: 215px;
       @include margin_lr();
       @include type(
         (
-          size: 14px,
-          height: 17px,
-          align: left,
+          size: 15px,
+          height: 20px,
           family: $primaryfont,
-          color: $white,
+          color: #fff,
         )
       );
-      @include mq(small_tablet) {
-        text-align: center;
-      }
-      @include mq(small_laptop) {
-        text-align: left;
-        max-width: 206px;
-        margin-top: 12px;
-      }
     }
   }
 }
+
+// .sec-one-news-single {
+//   @include mq(small_laptop) {
+//     height: 190px;
+//     padding-bottom: 17px;
+//     margin-bottom: 17px;
+//     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+//   }
+//   @include mq(monitor) {
+//     padding-bottom: 24px;
+//     margin-bottom: 24px;
+//     height: 210px;
+//   }
+//   a {
+//     text-decoration: none;
+//     &:hover {
+//       span.sec-one-news-title {
+//         color: $red;
+//       }
+//     }
+//     .sec-one-news-img {
+//       max-width: 233px;
+//       height: 142px;
+//       overflow: hidden;
+//       position: relative;
+//       padding-top: 138 / 233 * 100%;
+//       @include margin_lr();
+//       @include mq(small_laptop) {
+//         max-width: 206px;
+//         height: 126px;
+//       }
+//       @include mq(monitor) {
+//         max-width: 223px;
+//         height: 146px;
+//       }
+//       img {
+//         object-fit: cover;
+//         @include box(100%);
+//         @include image();
+//         @include margin_lr();
+//         @include abs(0, null, null, 0);
+//       }
+//     }
+//     span.sec-one-news-title {
+//       display: block;
+//       margin-top: 15px;
+//       max-width: 233px;
+//       transition: all 200ms ease-in-out;
+//       @include margin_lr();
+//       @include type(
+//         (
+//           size: 14px,
+//           height: 17px,
+//           align: left,
+//           family: $primaryfont,
+//           color: $white,
+//         )
+//       );
+//       @include mq(small_tablet) {
+//         text-align: center;
+//       }
+//       @include mq(small_laptop) {
+//         text-align: left;
+//         max-width: 206px;
+//         margin-top: 12px;
+//       }
+//     }
+//   }
+// }
 
 #sec-one-news-arrows {
   display: none;

@@ -119,16 +119,40 @@ if (basename(get_page_template()) === 'page.php') {
     <div id='header-right'>
 
       <nav>
-        <?php wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
+
+        <?php
+
+if (is_page(4436) || is_page('gracias') || is_singular('espanol')) {
+
+    wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'spanish_menu'));
+
+} else {
+
+    wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));
+
+}?>
+
       </nav>
 
       <div id='call-container'>
 
-        <a href='tel:8005419376'>
+        <a href='tel:+1<?php echo str_replace(['-', '(', ')', ' '], '', get_field('header_phone', 'option')); ?>'>
+
+          <?php
+
+if (is_page(4436) || is_page('gracias') || is_singular('espanol')): ?>
+
+          <span id='call-cta'><?php the_field('spanish_phone_cta', 'option');?></span><!-- call-cta -->
+
+          <span id='phone'><?php the_field('spanish_header_phone', 'option');?></span><!-- phone -->
+
+          <?php else: ?>
 
           <span id='call-cta'><?php the_field('phone_cta', 'option');?></span><!-- call-cta -->
 
           <span id='phone'><?php the_field('header_phone', 'option');?></span><!-- phone -->
+
+          <?php endif;?>
 
         </a>
 
@@ -136,9 +160,19 @@ if (basename(get_page_template()) === 'page.php') {
 
       <div id='spanish-container'>
 
+        <?php
+
+if (is_page(4436) || is_page('gracias') || is_singular('espanol')): ?>
+
+        <a href='<?php bloginfo('url');?>'>En Inglés</a>
+
+        <?php else: ?>
+
         <a
           href='<?php the_field('en_espanol_page_link', 'option');?>'><?php the_field('en_espanol_verbiage', 'option');?></a>
         <!-- class -->
+
+        <?php endif;?>
 
       </div><!-- spanish-container -->
 

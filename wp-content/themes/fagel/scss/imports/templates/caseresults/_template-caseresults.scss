@@ -26,11 +26,12 @@
   color: $white;
   background: $blacktwo;
   padding: 25px 25px 15px;
+  display: none; // client wants the filtering system removed
   @include mq(small_tablet) {
     background: transparent;
     max-width: 660px;
     padding: 25px 25px 23px;
-    @include flex(space-between);
+    //@include flex(space-between);
     flex-wrap: wrap;
     @include margin_lr();
   }

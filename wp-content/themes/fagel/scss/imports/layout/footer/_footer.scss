@@ -15,10 +15,10 @@ footer {
 #footer-top {
   background: $blue;
   color: $white;
-  padding-bottom: 148px;
+  padding-bottom: 59px;
   @include mq(small_tablet) {
     margin-top: -69px;
-    padding-bottom: 107px;
+    padding-bottom: 55px;
     position: relative;
     max-width: 870px;
     @include margin_lr();
@@ -170,18 +170,39 @@ footer {
     position: relative;
   }
   @include mq(small_laptop) {
-    padding: 0 56px 81px 0;
+    padding: 0 56px 20px 0;
     margin-left: 22px;
     margin-top: 110px;
   }
   @include mq(large_laptop) {
     margin-left: 85px;
-    padding: 0 68px 81px 0;
+    padding: 0 68px 20px 0;
   }
   @include mq(monitor) {
     margin-top: 125px;
   }
+  .gform_wrapper {
+    &.gform_validation_error {
+      .gform_fields {
+        .gfield {
+          &.gfield_html_formatted {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  form {
+    @include mq(small_tablet) {
+      @include flex(null, flex-end);
+      flex-direction: column;
+    }
+  }
   .gform_body {
+    @include mq(small_tablet) {
+      width: 100%;
+    }
+
     .gform_fields {
       @include mq(small_tablet) {
         @include flex(space-between);
@@ -194,9 +215,26 @@ footer {
           flex-basis: calc(50% - 7px);
           margin-bottom: 12px;
         }
-        &#field_1_5 {
+        &#field_1_5,
+        &#field_4_5 {
           flex-basis: 100%;
         }
+        &.gfield_html_formatted {
+          &::after {
+            display: none;
+          }
+          span.fagel-required {
+            display: block;
+            // margin-top: -100px;
+            @include type(
+              (
+                size: 15px,
+                family: $primaryfont,
+              )
+            );
+          }
+        }
+
         &::after {
           @include abs(24px, 12px, null, null);
           @include contentdisplay(block, "*");
@@ -245,28 +283,20 @@ footer {
     }
   }
   .gform_footer {
-    margin-top: 58px;
+    margin-top: 41px;
     border: 1px solid $white;
     max-width: max-content;
-    padding: 15px 39px;
+    padding: 0px;
     border-radius: 60px;
     background: transparent;
+    position: relative;
     transition: all 200ms ease-in-out;
-    @include flex(center, center);
+    //@include flex(center, center);
     @include margin_lr();
     @include mq(small_tablet) {
+      margin-top: 0px;
       margin-right: 0;
       margin-left: 0;
-      @include abs(null, 50px, -55px, null);
-    }
-    @include mq(small_laptop) {
-      @include abs(null, 60px, 12px, null);
-    }
-    @include mq(large_laptop) {
-      @include abs(null, 72px, 12px, null);
-    }
-    @include mq(monitor) {
-      @include abs(null, 72px, 60px, null);
     }
     &:hover {
       background: $white;
@@ -278,8 +308,8 @@ footer {
       }
     }
     &::after {
-      margin-left: 20px;
       transition: all 200ms ease-in-out;
+      @include abs(22px, 35px, null, null);
       @include tri(right, 5px, 8px, $white);
       @include contentdisplay();
     }
@@ -287,6 +317,8 @@ footer {
       border: none;
       background: transparent;
       cursor: pointer;
+      text-indent: -25px;
+      @include box(169px, 52px);
       @include type(
         (
           size: 15px,
@@ -297,19 +329,6 @@ footer {
           spacing: 0.75px,
         )
       );
-    }
-  }
-  span.required {
-    display: block;
-    margin-top: -100px;
-    @include type(
-      (
-        size: 15px,
-        family: $primaryfont,
-      )
-    );
-    @include mq(small_tablet) {
-      margin-top: 0px;
     }
   }
 }

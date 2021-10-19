@@ -323,45 +323,29 @@ a#sec-three-button {
   @include mq(monitor) {
     bottom: 31px;
   }
-  span.sec-three-arrow {
+  .sec-three-arrow {
     display: block;
     position: relative;
-    @include box(6px, 10px);
+    margin-left: 15px;
+    margin-right: 15px;
+    @include box(12px, 20px);
     &:hover {
-      &::before,
-      &::after {
-        background: $red;
+      svg {
+        path {
+          fill: $red;
+        }
       }
     }
-    &::before,
-    &::after {
-      background: $white;
-      position: absolute;
-      left: 0;
-      transition: all 200ms ease-in-out;
-      @include box(100%, 1px);
-      @include contentdisplay();
-    }
-    &::before {
-      top: 2px;
-    }
-    &::after {
-      top: 6px;
+    svg {
+      @include box(12px, 20px);
+      path {
+        fill: $white;
+        transition: all 200ms ease-in-out;
+      }
     }
     &#sec-three-arrow-left {
-      &::before {
-        transform: rotate(-45deg);
-      }
-      &::after {
-        transform: rotate(45deg);
-      }
-    }
-    &#sec-three-arrow-right {
-      &::before {
-        transform: rotate(45deg);
-      }
-      &::after {
-        transform: rotate(-45deg);
+      svg {
+        transform: rotate(180deg);
       }
     }
   }
@@ -369,6 +353,7 @@ a#sec-three-button {
 
 #sec-three-arrow-counter {
   margin: 0 35px;
+  display: none;
   @include type(
     (
       size: 15px,

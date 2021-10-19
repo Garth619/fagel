@@ -1,6 +1,8 @@
 <?php
 
-/* Template Name: PA Directory */
+/* Template Name: PA Directory
+
+Template Post Type: page, espanol */
 
 get_header();?>
 

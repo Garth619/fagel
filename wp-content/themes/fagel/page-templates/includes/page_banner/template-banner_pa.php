@@ -14,8 +14,17 @@
 
       <?php else: ?>
 
+      <?php if (is_page('gracias') || is_singular('espanol')): ?>
+
+      <span id='banner-subtitle'><?php the_field('spanish__global_internal_banner_sub_title', 'option');?></span>
+      <!-- page-title -->
+
+      <?php else: ?>
+
       <span id='banner-subtitle'><?php the_field('global_internal_banner_sub_title', 'option');?></span>
       <!-- page-title -->
+
+      <?php endif;?>
 
       <?php endif;?>
 
@@ -33,6 +42,14 @@
 
       <?php else: ?>
 
+      <?php if (is_page('gracias') || is_singular('espanol')): ?>
+
+      <span
+        class='banner-title page-title banner-pa-title'><?php the_field('spanish_global_internal_banner_title', 'option');?></span>
+      <!-- page-title -->
+
+      <?php else: ?>
+
       <span
         class='banner-title page-title banner-pa-title'><?php the_field('global_internal_banner_title', 'option');?></span>
       <!-- page-title -->
@@ -41,10 +58,21 @@
 
       <?php endif;?>
 
+      <?php endif;?>
+
       <a id='banner-button' class='button pa-banner-button' href='#consultation'>
+
+        <?php if (is_page('gracias') || is_singular('espanol')): ?>
+
+        <button><?php the_field('spanish_global_internal_banner_title', 'option');?><span
+            class='button-tri'><span></button>
+
+        <?php else: ?>
 
         <button><?php the_field('global_internal_banner_button_verbiage', 'option');?><span
             class='button-tri'><span></button>
+
+        <?php endif;?>
 
       </a><!-- button -->
 

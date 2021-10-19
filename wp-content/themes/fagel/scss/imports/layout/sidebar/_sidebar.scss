@@ -120,6 +120,15 @@
     @include mq(large_laptop) {
       padding: 0 5px;
     }
+    &.gform_validation_error {
+      .gform_fields {
+        .gfield {
+          &.gfield_html_formatted {
+            display: none;
+          }
+        }
+      }
+    }
   }
   .gform_body {
     .gform_fields {
@@ -128,6 +137,21 @@
         margin-bottom: 15px;
         &#field_2_5 {
           flex-basis: 100%;
+        }
+        &.gfield_html_formatted {
+          &::after {
+            display: none;
+          }
+          span.fagel-required {
+            display: block;
+            margin-top: -5px;
+            @include type(
+              (
+                size: 17px,
+                family: $primaryfont,
+              )
+            );
+          }
         }
         &::after {
           @include abs(24px, 12px, null, null);
@@ -177,8 +201,9 @@
     margin-top: 58px;
     border: 1px solid $white;
     max-width: max-content;
-    padding: 15px 31px;
+    //padding: 15px 31px;
     border-radius: 60px;
+    position: relative;
     background: transparent;
     transition: all 200ms ease-in-out;
     @include flex(center, center);
@@ -196,12 +221,16 @@
     &::after {
       margin-left: 20px;
       transition: all 200ms ease-in-out;
+      @include abs(22px, 30px, null, null);
       @include tri(right, 5px, 8px, $white);
       @include contentdisplay();
     }
     input[type="submit"] {
       border: none;
       background: transparent;
+      text-indent: -25px;
+      cursor: pointer;
+      @include box(153px, 52px);
       @include type(
         (
           size: 15px,
@@ -213,16 +242,6 @@
         )
       );
     }
-  }
-  span.required {
-    display: block;
-    margin-top: -5px;
-    @include type(
-      (
-        size: 17px,
-        family: $primaryfont,
-      )
-    );
   }
 }
 

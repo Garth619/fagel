@@ -53,7 +53,8 @@
 
         <div id='banner-video' class="video-container">
 
-          <a href='https://www.youtube.com/embed/<?php the_field('video_in_top_banner_youtube_id');?>' data-lity>
+          <div data-lity-target='https://www.youtube.com/embed/<?php the_field('video_in_top_banner_youtube_id');?>'
+            data-lity>
 
             <div class='vid-overlay'>
 
@@ -68,7 +69,7 @@
             <img id='banner-vid-img' class="vid-thumb"
               src='<?php bloginfo('template_directory');?>/images/video-image.jpg' alt='' />
 
-          </a>
+          </div>
 
         </div><!-- banner-video -->
 

@@ -1,6 +1,8 @@
 <?php
 
-/* Template Name: Video Center */
+/* Template Name: Video Center
+
+Template Post Type: page, espanol */
 
 get_header();?>
 
@@ -19,7 +21,8 @@ get_header();?>
 
         <div class='single-video-inner'>
 
-          <a href='https://www.youtube.com/embed/<?php the_sub_field('youtube_id_video_center');?>' data-lity>
+          <div data-lity-target='https://www.youtube.com/embed/<?php the_sub_field('youtube_id_video_center');?>'
+            data-lity>
 
             <div class='single-video-thumb video-container'>
 
@@ -41,7 +44,7 @@ get_header();?>
             <span class='single-video-title'><?php the_sub_field('video_title_video_center');?></span>
             <!-- single-video-title -->
 
-          </a>
+          </div>
 
         </div><!-- single-video-inner -->
 

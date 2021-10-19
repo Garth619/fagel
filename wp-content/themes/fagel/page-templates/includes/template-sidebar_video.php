@@ -1,17 +1,25 @@
+<?php if (is_singular('espanol')) {
+
+    $sidebar_youtube_ID = get_field('spanish_blog_youtube_id', 'option');
+    $sidebar_video_thumbnail = get_field('spanish_sidebar_video_thumbnail', 'option');
+    $sidebar_video_title = get_field('spanish_blog_video_title', 'option');
+
+} else {
+
+    $sidebar_youtube_ID = get_field('blog_youtube_id', 'option');
+    $sidebar_video_thumbnail = get_field('sidebar_video_thumbnail', 'option');
+    $sidebar_video_title = get_field('blog_video_title', 'option');
+
+}?>
+
 <div id='sidebar-video-wrapper'>
 
   <div id='sidebar-video' class='video-container'>
 
-    <a href='https://www.youtube.com/embed/<?php the_field('blog_youtube_id', 'option');?>' data-lity>
-
-      <?php $sidebar_video_thumbnail = get_field('sidebar_video_thumbnail', 'option');?>
-
-      <?php if ($sidebar_video_thumbnail) {?>
+    <div data-lity-target='https://www.youtube.com/embed/<?php echo $sidebar_youtube_ID; ?>' data-lity>
 
       <img class='vid-thumb' src="<?php echo $sidebar_video_thumbnail['url']; ?>"
         alt="<?php echo $sidebar_video_thumbnail['alt']; ?>" />
-
-      <?php }?>
 
       <div class='vid-overlay'>
 
@@ -23,10 +31,10 @@
 
       </div><!-- vid-overlay -->
 
-    </a>
+    </div>
 
   </div><!-- sidebar-video -->
 
-  <span id='sidebar-video-title'><?php the_field('blog_video_title', 'option');?></span><!-- sidebar-video-title -->
+  <span id='sidebar-video-title'><?php echo $sidebar_video_title; ?></span><!-- sidebar-video-title -->
 
 </div><!-- sidebar-video-wrapper -->
