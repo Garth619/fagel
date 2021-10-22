@@ -86,7 +86,8 @@ $args = array(
     'post_type' => 'case_results',
     'post__in' => $amount_order,
     'orderby' => 'post__in',
-    'posts_per_page' => -1,
+    'posts_per_page' => 12,
+    'paged' => $paged,
 );
 $temp = $wp_query;
 $wp_query = null;
@@ -118,6 +119,12 @@ while ($wp_query->have_posts()): $wp_query->the_post();?>
     </div><!-- case-results-single -->
 
     <?php endwhile;?>
+
+    <div id='case-results-nav'>
+
+      <?php my_numeric_posts_nav();?>
+
+    </div><!-- case-results-nav -->
 
     <?php
 $wp_query = null;

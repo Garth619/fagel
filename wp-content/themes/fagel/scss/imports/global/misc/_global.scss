@@ -10,7 +10,10 @@
   }
   &.no-banner {
     @include mq(small_laptop) {
-      margin-top: 0px;
+      margin-top: 76px;
+    }
+    @include mq(small_monitor) {
+      margin-top: 106px;
     }
     #page-container {
       @include mq(small_laptop) {
@@ -39,14 +42,14 @@ body.sticky {
   #internal-main {
     margin-top: 76px;
     @include mq(small_laptop) {
-      margin-top: -77px;
-    }
-    @include mq(monitor) {
-      margin-top: -106px;
+      margin-top: 0px;
     }
     &.no-banner {
       @include mq(small_laptop) {
-        margin-top: 0px;
+        margin-top: 76px;
+      }
+      @include mq(small_monitor) {
+        margin-top: 106px;
       }
     }
     &.pa-banner {
@@ -54,18 +57,11 @@ body.sticky {
       @include mq(small_tablet) {
         margin-top: 0px;
       }
-      @include mq(small_laptop) {
-        margin-top: -77px;
-      }
-      @include mq(monitor) {
-        margin-top: -106px;
-      }
     }
   }
 }
 
 #page-container {
-  // this might need to be only no banner or something
   padding: 28px 33px 40px;
   min-height: 300px;
   @include mq(small_tablet) {

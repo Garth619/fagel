@@ -17,14 +17,14 @@ if (get_field('blog_youtube_id', 'option') || get_field('blog_video_title', 'opt
     <span id='sidebar-form-title'><?php the_field('spanish_sidebar_form_title', 'option');?></span>
     <!-- sidebar-form-title -->
 
-    <?php gravity_form(3, false, false, false, '', true, 132);?>
+    <?php gravity_form(3, false, false, false, '', true, 1332);?>
 
     <?php else: ?>
 
     <span id='sidebar-form-title'><?php the_field('sidebar_form_title', 'option');?></span>
     <!-- sidebar-form-title -->
 
-    <?php gravity_form(2, false, false, false, '', true, 132);?>
+    <?php gravity_form(2, false, false, false, '', true, 1355);?>
 
     <?php endif;?>
 

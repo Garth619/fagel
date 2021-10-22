@@ -598,7 +598,8 @@ h4 {
     line-height: 30px;
   }
 }
-.content h3 {
+.content h3,
+.content h5 {
   padding-bottom: 26px;
   font-size: 16px;
   line-height: 25px;
@@ -608,13 +609,15 @@ h4 {
   text-decoration: none;
 }
 @media screen and (min-width: 768px) {
-  .content h3 {
+  .content h3,
+.content h5 {
     font-size: 18px;
     line-height: 30px;
   }
 }
 @media screen and (min-width: 1380px) {
-  .content h3 {
+  .content h3,
+.content h5 {
     font-size: 20px;
     line-height: 30px;
   }
@@ -642,7 +645,8 @@ h4 {
   }
 }
 .content p,
-.content ul {
+.content ul,
+.content ol {
   margin-bottom: 25px;
 }
 .content a {
@@ -672,6 +676,23 @@ h4 {
   .content ul li {
     padding-left: 12px;
   }
+}
+.content ol {
+  list-style: none;
+  counter-reset: item;
+}
+.content ol > li {
+  counter-increment: item;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 8px;
+}
+.content ol > li:before {
+  content: counter(item) ".";
+  font-weight: 800;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .content blockquote {
   padding: 0px;
@@ -832,7 +853,12 @@ img.aligncenter {
 }
 @media screen and (min-width: 1170px) {
   #internal-main.no-banner {
-    margin-top: 0px;
+    margin-top: 76px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  #internal-main.no-banner {
+    margin-top: 106px;
   }
 }
 @media screen and (min-width: 1170px) {
@@ -869,17 +895,17 @@ body.sticky #internal-main {
 }
 @media screen and (min-width: 1170px) {
   body.sticky #internal-main {
-    margin-top: -77px;
-  }
-}
-@media screen and (min-width: 1800px) {
-  body.sticky #internal-main {
-    margin-top: -106px;
+    margin-top: 0px;
   }
 }
 @media screen and (min-width: 1170px) {
   body.sticky #internal-main.no-banner {
-    margin-top: 0px;
+    margin-top: 76px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  body.sticky #internal-main.no-banner {
+    margin-top: 106px;
   }
 }
 body.sticky #internal-main.pa-banner {
@@ -888,16 +914,6 @@ body.sticky #internal-main.pa-banner {
 @media screen and (min-width: 768px) {
   body.sticky #internal-main.pa-banner {
     margin-top: 0px;
-  }
-}
-@media screen and (min-width: 1170px) {
-  body.sticky #internal-main.pa-banner {
-    margin-top: -77px;
-  }
-}
-@media screen and (min-width: 1800px) {
-  body.sticky #internal-main.pa-banner {
-    margin-top: -106px;
   }
 }
 
@@ -1305,6 +1321,7 @@ header {
   background: #000;
   position: relative;
   z-index: 5;
+  transition: background 200ms ease-in-out;
 }
 @media screen and (min-width: 768px) {
   header {
@@ -1317,7 +1334,6 @@ header {
 }
 @media screen and (min-width: 1170px) {
   header {
-    position: relative;
     background: transparent;
   }
 }
@@ -1325,6 +1341,19 @@ header {
 header.no-banner #header-left,
 header.no-banner #header-right {
   background: #0f1517;
+}
+
+@media screen and (min-width: 1170px) {
+  header.desktop-sticky {
+    background: #0f1517;
+  }
+}
+header.desktop-sticky nav {
+  background: #0f1517;
+}
+
+header.no-banner.desktop-sticky nav ul.menu > li > a {
+  color: #fff;
 }
 
 #header-left {
@@ -1617,9 +1646,9 @@ nav {
           transform: translateY(-20px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out, -webkit-transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
-  transition: transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 300ms ease-in-out, visibility 300ms ease-in-out;
-  transition: transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 300ms ease-in-out, visibility 300ms ease-in-out, -webkit-transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  transition: background 200ms ease-in-out, opacity 300ms ease-in-out, visibility 300ms ease-in-out, -webkit-transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  transition: background 200ms ease-in-out, transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+  transition: background 200ms ease-in-out, transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 300ms ease-in-out, visibility 300ms ease-in-out, -webkit-transform 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
   background: #0f1517;
   padding: 50px 0px;
   overflow-y: scroll;
@@ -1646,16 +1675,16 @@ nav {
     background: transparent;
     overflow-y: visible;
     height: auto;
-    top: 92px;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
     opacity: 1;
     visibility: visible;
     transition: none;
+    transition: background 200ms ease-in-out;
     width: 100%;
-    padding: 0 76px;
+    padding: 15px 76px 0px;
     position: absolute;
-    top: 92px;
+    top: 77px;
     left: 0;
   }
 }
@@ -1728,7 +1757,7 @@ nav ul.menu > li.menu-item-has-children {
 }
 @media screen and (min-width: 1170px) {
   nav ul.menu > li.menu-item-has-children {
-    padding-bottom: 35px;
+    padding-bottom: 22px;
   }
 }
 @media screen and (min-width: 1170px) {
@@ -3818,13 +3847,12 @@ a#view-locations-button button {
 }
 @media screen and (min-width: 1170px) {
   #section-one {
-    margin-top: -77px;
+    margin-top: 0px;
     padding: 76px 0px 0;
   }
 }
 @media screen and (min-width: 1800px) {
   #section-one {
-    margin-top: -106px;
     padding: 104px 0px 0;
   }
 }
@@ -3834,19 +3862,15 @@ body.sticky #section-one {
 }
 @media screen and (min-width: 1170px) {
   body.sticky #section-one {
-    margin-top: -77px;
+    margin-top: 0px;
   }
 }
-@media screen and (min-width: 1800px) {
-  body.sticky #section-one {
-    margin-top: -106px;
-  }
-}
-
 #sec-one-inner {
   position: relative;
   z-index: 1;
   text-align: center;
+  flex-direction: column;
+  display: flex;
 }
 @media screen and (min-width: 768px) {
   #sec-one-inner {
@@ -3885,6 +3909,8 @@ body.sticky #section-one {
   max-width: 464px;
   width: calc(100% - 46px);
   position: relative;
+  order: 2;
+  margin-bottom: 45px;
   grid-area: sec-one-video-wrapper;
   margin-left: auto;
   margin-right: auto;
@@ -4124,11 +4150,12 @@ span#sec-one-play-button span {
 }
 
 #sec-one-titles {
-  margin-top: 40px;
-  margin-bottom: 66px;
+  margin-top: 20px;
+  margin-bottom: 45px;
   padding: 0 43px;
   text-align: center;
   grid-area: sec-one-titles;
+  order: 1;
 }
 @media screen and (min-width: 768px) {
   #sec-one-titles {
@@ -4233,6 +4260,7 @@ a#sec-one-button {
   grid-area: sec-one-sp;
   position: relative;
   z-index: 1;
+  order: 3;
 }
 @media screen and (min-width: 768px) {
   #sec-one-sp {
@@ -4421,6 +4449,7 @@ a#sec-one-button {
 #sec-one-news {
   grid-area: sec-one-news;
   background: #0f1517;
+  order: 4;
 }
 @media screen and (min-width: 1170px) {
   #sec-one-news {
@@ -4456,7 +4485,7 @@ a#sec-one-button {
 @media screen and (min-width: 1170px) {
   #sec-one-news #sec-one-news-slider {
     padding: 64px 0px 20px;
-    width: 206px;
+    width: 250px;
   }
 }
 @media screen and (min-width: 1380px) {
@@ -4466,7 +4495,6 @@ a#sec-one-button {
 }
 @media screen and (min-width: 1800px) {
   #sec-one-news #sec-one-news-slider {
-    width: 223px;
     padding: 43px 0px 51px;
   }
 }
@@ -6239,10 +6267,12 @@ a#sec-six-button button {
 }
 #pa-wrapper {
   margin-bottom: 20px;
+  padding-top: 10px;
 }
 @media screen and (min-width: 768px) {
   #pa-wrapper {
     max-width: 950px;
+    padding-top: 0px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -6302,7 +6332,7 @@ a#sec-six-button button {
   padding: 17px 15px;
   transition: all 200ms ease-in-out;
   border-bottom: 1px solid #bababa;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 20px;
   font-family: "Open Sans", sans-serif;
   color: #000;
@@ -6672,7 +6702,7 @@ a#sec-six-button button {
   display: block;
   padding-top: 20px;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 24px;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -6686,11 +6716,15 @@ body.page-id-11422 .testi-text-single .testi-text-left img:last-of-type {
 @media screen and (min-width: 768px) {
   #about-title.page-title {
     font-size: 45px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media screen and (min-width: 1170px) {
   #about-title.page-title {
     padding-top: 40px;
+    max-width: 890px;
     font-size: 60px;
     line-height: 70px;
   }
@@ -7714,6 +7748,12 @@ a.bio-button:last-of-type {
 #case-result-wrapper {
   padding-top: 0px;
 }
+@media screen and (min-width: 1800px) {
+  #case-result-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 #case-results-inner {
   padding-top: 35px;
@@ -7750,19 +7790,12 @@ a.bio-button:last-of-type {
 }
 @media screen and (min-width: 1170px) {
   .case-results-single:nth-of-type(2n + 1) {
-    padding-right: 40px;
+    padding-right: 60px;
   }
 }
 @media screen and (min-width: 1170px) {
   .case-results-single:nth-of-type(2n + 2) {
-    padding-left: 40px;
-  }
-}
-@media screen and (min-width: 1170px) {
-  .case-results-single:nth-last-child(-n+2) {
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    border-bottom: 0;
+    padding-left: 60px;
   }
 }
 .case-results-single:last-of-type {
@@ -7839,6 +7872,16 @@ a.bio-button:last-of-type {
 }
 .case-results-meta h2 span:last-of-type::after {
   display: none;
+}
+
+#case-results-nav {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#case-results-nav .paged_wrapper ul li a {
+  text-decoration: none;
 }
 
 #video-center {
@@ -8252,7 +8295,7 @@ body.blog #sidebar-wrapper #sidebar-video-wrapper #sidebar-video {
 @media screen and (min-width: 768px) {
   .blog-post .blog-left {
     flex-shrink: 0;
-    width: 176px;
+    width: 224px;
     margin-right: 36px;
   }
 }
@@ -8365,6 +8408,9 @@ body.blog #sidebar-wrapper #sidebar-video-wrapper #sidebar-video {
   font-style: normal;
   text-decoration: none;
 }
+.paged_wrapper ul li.active a {
+  color: #ff0f17;
+}
 .paged_wrapper ul li.myprev, .paged_wrapper ul li.mynext {
   position: absolute;
   top: 0;
@@ -8401,6 +8447,10 @@ body.blog #sidebar-wrapper #sidebar-video-wrapper #sidebar-video {
 }
 .paged_wrapper ul li a {
   color: #0f1517;
+  transition: all 200ms ease-in-out;
+}
+.paged_wrapper ul li a:hover {
+  color: #ff0f17;
 }
 
 #not-found {

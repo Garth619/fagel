@@ -37,7 +37,8 @@
       @include quick_type(25px, 30px, null);
     }
   }
-  h3 {
+  h3,
+  h5 {
     padding-bottom: 26px;
     @include type(
       (
@@ -73,7 +74,8 @@
     }
   }
   p,
-  ul {
+  ul,
+  ol {
     margin-bottom: 25px;
   }
   a {
@@ -86,8 +88,6 @@
     }
   }
   ul {
-    //list-style: none;
-    //margin: 0;
     margin-left: 20px;
     &.single-line-list {
       li {
@@ -104,6 +104,22 @@
       @include mq(small_tablet) {
         padding-left: 12px;
       }
+    }
+  }
+  ol {
+    list-style: none;
+    counter-reset: item;
+
+    > li {
+      counter-increment: item;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 8px;
+    }
+    > li:before {
+      content: counter(item) ".";
+      font-weight: 800;
+      @include abs(0, null, null, 0);
     }
   }
   blockquote {

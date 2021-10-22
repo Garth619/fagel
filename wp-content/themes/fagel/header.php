@@ -101,7 +101,7 @@ if (basename(get_page_template()) === 'page.php') {
 
 <body <?php body_class();?>>
 
-  <header class='<?php echo $banner; ?>'>
+  <header id='header' class='<?php echo $banner; ?>'>
 
     <div id='header-left'>
 

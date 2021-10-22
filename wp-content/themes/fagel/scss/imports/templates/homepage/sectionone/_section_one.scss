@@ -6,13 +6,13 @@
     padding: 44px 0px 0;
   }
   @include mq(small_laptop) {
-    margin-top: -77px;
+    margin-top: 0px;
     padding: 76px 0px 0;
   }
   @include mq(large_laptop) {
   }
   @include mq(monitor) {
-    margin-top: -106px;
+    //margin-top: -106px;
     padding: 104px 0px 0;
   }
 }
@@ -21,10 +21,11 @@ body.sticky {
   #section-one {
     margin-top: 75px;
     @include mq(small_laptop) {
-      margin-top: -77px;
+      margin-top: 0px;
+      //margin-top: -77px;
     }
     @include mq(monitor) {
-      margin-top: -106px;
+      //margin-top: -106px;
     }
   }
 }
@@ -33,6 +34,9 @@ body.sticky {
   position: relative;
   z-index: 1;
   text-align: center;
+
+  flex-direction: column;
+  @include flex();
   @include mq(small_tablet) {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -71,6 +75,8 @@ body.sticky {
   max-width: 464px;
   width: calc(100% - 46px);
   position: relative;
+  order: 2;
+  margin-bottom: 45px;
   grid-area: sec-one-video-wrapper;
   @include margin_lr();
 
@@ -230,11 +236,12 @@ span#sec-one-play-button {
 }
 
 #sec-one-titles {
-  margin-top: 40px;
-  margin-bottom: 66px;
+  margin-top: 20px;
+  margin-bottom: 45px;
   padding: 0 43px;
   text-align: center;
   grid-area: sec-one-titles;
+  order: 1;
   @include mq(small_tablet) {
     margin-bottom: 72px;
   }
@@ -320,6 +327,7 @@ a#sec-one-button {
   grid-area: sec-one-sp;
   position: relative;
   z-index: 1;
+  order: 3;
   @include mq(small_tablet) {
     padding-bottom: 47px;
   }
@@ -468,7 +476,7 @@ a#sec-one-button {
 #sec-one-news {
   grid-area: sec-one-news;
   background: $blacktwo;
-
+  order: 4;
   @include mq(small_laptop) {
     background: transparent;
     padding-left: 30px;
@@ -493,13 +501,13 @@ a#sec-one-button {
     @include mq(small_laptop) {
       //padding: 88px 0px 20px;
       padding: 64px 0px 20px;
-      width: 206px;
+      width: 250px;
     }
     @include mq(large_laptop) {
       padding: 62px 0px 51px;
     }
     @include mq(monitor) {
-      width: 223px;
+      //width: 223px;
       padding: 43px 0px 51px;
     }
     .slick-dots {

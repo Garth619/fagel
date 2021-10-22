@@ -1,7 +1,9 @@
 #pa-wrapper {
   margin-bottom: 20px;
+  padding-top: 10px;
   @include mq(small_tablet) {
     max-width: 950px;
+    padding-top: 0px;
     @include margin_lr();
   }
   @include mq(small_laptop) {
@@ -58,7 +60,7 @@
               border-bottom: 1px solid #bababa;
               @include type(
                 (
-                  size: 18px,
+                  size: 17px,
                   height: 20px,
                   color: $black,
                   family: $primaryfont,

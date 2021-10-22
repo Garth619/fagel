@@ -1,5 +1,23 @@
 <?php
 
+/**
+ *
+ * HTML Spanish Language Attribute (<html lang="es">)
+ *
+ */
+
+function change_locale($locale)
+{
+    $spanish = is_page(4436) || is_page('gracias') || is_singular('espanol');
+    if ($spanish) {
+        $locale = 'es';
+    } else {
+        $locale = 'en_US';
+    }
+    return $locale;
+}
+add_filter('locale', 'change_locale', 10);
+
 /* Front Facing Styles and Scripts
 -------------------------------------------------------------- */
 
@@ -8,7 +26,7 @@ function load_my_styles_scripts()
 
     // Styles
 
-    //wp_enqueue_style('styles', get_template_directory_uri() . '/style.css', '', 5, 'all');
+    // wp_enqueue_style('styles', get_template_directory_uri() . '/style.css', '', 5, 'all');
 
     // Disables jquery then registers it again to go into footer
 

@@ -119,6 +119,10 @@ jQuery(document).ready(function ($) {
     true
   );
 
+  createWaypoint("section-one", "#header", "desktop-sticky", -3, null, true);
+
+  createWaypoint("internal-main", "#header", "desktop-sticky", -3, null, true);
+
   createWaypoint("section-two", "#section-two", "visible", 200, null, true);
 
   createWaypoint("section-three", "#section-three", "visible", 400, null, true);

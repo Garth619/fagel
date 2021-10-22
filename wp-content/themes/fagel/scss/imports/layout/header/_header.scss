@@ -3,12 +3,12 @@ header {
   background: $black;
   position: relative;
   z-index: 5;
+  transition: background 200ms ease-in-out;
   @include mq(small_tablet) {
     @include fixed(0, null, null, 0);
     @include flex(flex-end);
   }
   @include mq(small_laptop) {
-    position: relative;
     background: transparent;
   }
 }
@@ -20,13 +20,26 @@ header.no-banner {
   }
 }
 
-// header.pa-banner {
-//   background: transparent;
-//   #header-left,
-//   #header-right {
-//     background: transparent;
-//   }
-// }
+header.desktop-sticky {
+  @include mq(small_laptop) {
+    background: $blacktwo;
+  }
+  nav {
+    background: $blacktwo;
+  }
+}
+
+header.no-banner.desktop-sticky {
+  nav {
+    ul.menu {
+      > li {
+        > a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
 
 #header-left {
   padding: 15px;

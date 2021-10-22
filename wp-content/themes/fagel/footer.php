@@ -35,11 +35,11 @@ if (is_page(4436) || is_page('gracias') || is_singular('espanol')): ?>
 
       <?php if (is_page(4436) || is_page('gracias') || is_singular('espanol')): ?>
 
-      <?php gravity_form(4, false, false, false, '', true, 12);?>
+      <?php gravity_form(4, false, false, false, '', true, 1442);?>
 
       <?php else: ?>
 
-      <?php gravity_form(1, false, false, false, '', true, 12);?>
+      <?php gravity_form(1, false, false, false, '', true, 1244);?>
 
       <?php endif;?>
 

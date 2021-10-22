@@ -49,7 +49,7 @@ body.blog {
     margin-bottom: 30px;
     @include mq(small_tablet) {
       flex-shrink: 0;
-      width: 176px;
+      width: 224px;
       margin-right: 36px;
     }
     @include mq(small_laptop) {
@@ -162,6 +162,11 @@ body.blog {
           transform: uppercase,
         )
       );
+      &.active {
+        a {
+          color: $red;
+        }
+      }
       &.myprev,
       &.mynext {
         position: absolute;
@@ -188,6 +193,10 @@ body.blog {
       }
       a {
         color: $blacktwo;
+        transition: all 200ms ease-in-out;
+        &:hover {
+          color: $red;
+        }
       }
     }
   }

@@ -2,9 +2,12 @@
   &.page-title {
     @include mq(small_tablet) {
       font-size: 45px;
+      max-width: 680px;
+      @include margin_lr();
     }
     @include mq(small_laptop) {
       padding-top: 40px;
+      max-width: 890px;
       @include quick_type(60px, 70px, null);
     }
     @include mq(monitor) {
