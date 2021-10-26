@@ -48,7 +48,7 @@ nav {
     transition: none;
     transition: background 200ms ease-in-out;
     width: 100%;
-    padding: 15px 76px 0px;
+    padding: 10px 76px 0px;
     @include abs(77px, null, null, 0);
   }
   @include mq(large_laptop) {
@@ -108,7 +108,10 @@ nav {
         &.menu-item-has-children {
           position: relative;
           @include mq(small_laptop) {
-            padding-bottom: 22px;
+            padding-bottom: 15px;
+          }
+          @include mq(large_laptop) {
+            padding-bottom: 30px;
           }
           &:hover {
             @include mq(small_laptop) {

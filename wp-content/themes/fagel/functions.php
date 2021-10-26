@@ -26,7 +26,7 @@ function load_my_styles_scripts()
 
     // Styles
 
-    // wp_enqueue_style('styles', get_template_directory_uri() . '/style.css', '', 5, 'all');
+    wp_enqueue_style('styles', get_template_directory_uri() . '/style.css', '', 5, 'all');
 
     // Disables jquery then registers it again to go into footer
 
@@ -43,7 +43,7 @@ add_action('wp_enqueue_scripts', 'load_my_styles_scripts', 20);
 /* CSS in Header for Lighthouse
 -------------------------------------------------------------- */
 
-add_action('wp_head', 'merge_include_css');
+//add_action('wp_head', 'merge_include_css');
 function merge_include_css()
 {
     $theme = wp_get_theme();

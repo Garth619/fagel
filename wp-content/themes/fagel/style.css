@@ -1396,18 +1396,21 @@ a#logo img {
   max-width: 100%;
   height: auto;
   display: block;
-  max-width: 330px;
+  width: 330px;
+  height: 68px;
 }
 @media screen and (min-width: 768px) {
   a#logo svg,
 a#logo img {
-    max-width: 240px;
+    width: 240px;
+    height: 50px;
   }
 }
 @media screen and (min-width: 1800px) {
   a#logo svg,
 a#logo img {
-    max-width: 345px;
+    width: 345px;
+    height: 72px;
   }
 }
 
@@ -1682,7 +1685,7 @@ nav {
     transition: none;
     transition: background 200ms ease-in-out;
     width: 100%;
-    padding: 15px 76px 0px;
+    padding: 10px 76px 0px;
     position: absolute;
     top: 77px;
     left: 0;
@@ -1757,7 +1760,12 @@ nav ul.menu > li.menu-item-has-children {
 }
 @media screen and (min-width: 1170px) {
   nav ul.menu > li.menu-item-has-children {
-    padding-bottom: 22px;
+    padding-bottom: 15px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  nav ul.menu > li.menu-item-has-children {
+    padding-bottom: 30px;
   }
 }
 @media screen and (min-width: 1170px) {
@@ -4173,7 +4181,7 @@ span#sec-one-play-button span {
   #sec-one-titles {
     margin-top: 112px;
     padding-bottom: 209px;
-    margin-left: 95px;
+    margin-left: 35px;
   }
 }
 @media screen and (min-width: 1800px) {
@@ -4182,7 +4190,7 @@ span#sec-one-play-button span {
     padding-bottom: 0px;
     margin-bottom: 175px;
     max-width: 980px;
-    margin-left: 53px;
+    margin-left: 0px;
   }
 }
 #sec-one-titles span {
@@ -4210,6 +4218,11 @@ span#sec-one-play-button span {
     max-width: 100%;
   }
 }
+@media screen and (min-width: 1170px) {
+  #sec-one-titles span#sec-one-subtitle {
+    font-size: 14px;
+  }
+}
 @media screen and (min-width: 1800px) {
   #sec-one-titles span#sec-one-subtitle {
     font-size: 22px;
@@ -4234,6 +4247,13 @@ span#sec-one-play-button span {
     margin-top: 12px;
     font-size: 59px;
     line-height: 65px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-one-titles span#sec-one-title {
+    max-width: 490px;
+    font-size: 50px;
+    line-height: 56px;
   }
 }
 @media screen and (min-width: 1800px) {
@@ -4677,32 +4697,159 @@ img#sec-one-hero-img {
 }
 @media screen and (min-width: 1170px) {
   img#sec-one-hero-img {
-    left: -80px;
+    left: -114px;
     max-width: inherit;
     width: auto;
     height: auto;
+    width: 1420px;
   }
 }
 @media screen and (min-width: 1300px) {
   img#sec-one-hero-img {
-    left: 0px;
+    left: -50px;
   }
 }
 @media screen and (min-width: 1380px) {
   img#sec-one-hero-img {
-    left: -120px;
+    left: -90px;
+    width: auto;
   }
 }
 @media screen and (min-width: 1480px) {
   img#sec-one-hero-img {
-    left: 0px;
-    width: 100%;
+    left: -40px;
+  }
+}
+@media screen and (min-width: 1540px) {
+  img#sec-one-hero-img {
+    left: -150px;
+    width: 1770px;
     height: 90%;
+  }
+}
+@media screen and (min-width: 1610px) {
+  img#sec-one-hero-img {
+    left: -240px;
+    width: 2000px;
+    height: 90%;
+  }
+}
+@media screen and (min-width: 1740px) {
+  img#sec-one-hero-img {
+    left: -140px;
   }
 }
 @media screen and (min-width: 1800px) {
   img#sec-one-hero-img {
-    height: calc(100% - 55px);
+    left: 0px;
+  }
+}
+@media screen and (min-width: 1930px) {
+  img#sec-one-hero-img {
+    left: 0px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  img#sec-one-hero-img {
+    width: 100%;
+  }
+}
+
+#att-buttons {
+  display: none;
+}
+@media screen and (min-width: 1170px) {
+  #att-buttons {
+    width: 100%;
+    max-width: 365px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 420px;
+    right: 0px;
+    left: 495px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  #att-buttons {
+    max-width: 450px;
+    position: absolute;
+    top: 390px;
+    right: 0px;
+    left: 510px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #att-buttons {
+    left: 580px;
+  }
+}
+@media screen and (min-width: 1480px) {
+  #att-buttons {
+    position: absolute;
+    top: 390px;
+    right: 0px;
+    left: 650px;
+  }
+}
+@media screen and (min-width: 1540px) {
+  #att-buttons {
+    max-width: 559px;
+    left: 613px;
+  }
+}
+@media screen and (min-width: 1610px) {
+  #att-buttons {
+    max-width: 655px;
+  }
+}
+@media screen and (min-width: 1740px) {
+  #att-buttons {
+    left: 715px;
+  }
+}
+@media screen and (min-width: 1800px) {
+  #att-buttons {
+    left: 798px;
+    top: 511px;
+    max-width: 630px;
+  }
+}
+@media screen and (min-width: 1900px) {
+  #att-buttons {
+    max-width: 700px;
+  }
+}
+@media screen and (min-width: 2100px) {
+  #att-buttons {
+    left: 900px;
+  }
+}
+@media screen and (min-width: 2200px) {
+  #att-buttons {
+    max-width: 800px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #att-buttons .att-button {
+    padding: 9px 18px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.13);
+    font-size: 10px;
+    line-height: 12px;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: normal;
+    text-decoration: none;
+  }
+}
+@media screen and (min-width: 1170px) and (min-width: 1800px) {
+  #att-buttons .att-button {
+    font-size: 12px;
+    padding: 11px 18px;
   }
 }
 
@@ -5173,6 +5320,22 @@ a#sec-three-button {
 
 #sec-three-slider {
   background: #0f1517;
+}
+@media screen and (min-width: 1170px) {
+  #sec-three-slider {
+    height: 575px;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-three-slider {
+    height: 607px;
+  }
+}
+@media screen and (min-width: 1800px) {
+  #sec-three-slider {
+    height: 681px;
+  }
 }
 
 @media screen and (min-width: 768px) {

@@ -167,6 +167,16 @@ a#sec-three-button {
 
 #sec-three-slider {
   background: $blacktwo;
+  @include mq(small_laptop) {
+    height: 575px;
+    overflow: hidden;
+  }
+  @include mq(large_laptop) {
+    height: 607px;
+  }
+  @include mq(monitor) {
+    height: 681px;
+  }
 }
 
 .sec-three-single {

@@ -57,6 +57,14 @@
 
     </div><!-- sec-one-titles -->
 
+    <div id='att-buttons'>
+
+      <a class='att-button'>Dr. Devon fagel</a><!-- att-button -->
+
+      <a class='att-button'>Dr. bruce fagel</a><!-- att-button -->
+
+    </div><!-- att-buttons -->
+
     <div id='sec-one-sp' class='tablet-container'>
 
       <div id='sec-one-sp-slider'>
@@ -163,13 +171,27 @@
     <?php $sec_one_background_image_desktop = get_field('sec_one_background_image_desktop');?>
 
     <?php if ($sec_one_background_image_desktop_webp) {?>
-    <source media='(min-width: 1380px)' srcset='<?php echo $sec_one_background_image_desktop_webp['url']; ?>'
+    <source media='(min-width: 1540px)' srcset='<?php echo $sec_one_background_image_desktop_webp['url']; ?>'
       type='image/webp'>
     <?php }?>
 
     <?php if ($sec_one_background_image_desktop) {?>
 
-    <source media='(min-width: 1380px)' srcset='<?php echo $sec_one_background_image_desktop['url']; ?>'>
+    <source media='(min-width: 1540px)' srcset='<?php echo $sec_one_background_image_desktop['url']; ?>'>
+
+    <?php }?>
+
+    <?php $sec_one_background_image_large_laptop_webp = get_field('sec_one_background_image_large_laptop_webp');?>
+    <?php $sec_one_background_image_large_laptop = get_field('sec_one_background_image_large_laptop');?>
+
+    <?php if ($sec_one_background_image_large_laptop_webp) {?>
+    <source media='(min-width: 1380px)' srcset='<?php echo $sec_one_background_image_large_laptop_webp['url']; ?>'
+      type='image/webp'>
+    <?php }?>
+
+    <?php if ($sec_one_background_image_large_laptop) {?>
+
+    <source media='(min-width: 1380px)' srcset='<?php echo $sec_one_background_image_large_laptop['url']; ?>'>
 
     <?php }?>
 

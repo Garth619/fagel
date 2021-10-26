@@ -253,14 +253,14 @@ span#sec-one-play-button {
   @include mq(large_laptop) {
     margin-top: 112px;
     padding-bottom: 209px;
-    margin-left: 95px;
+    margin-left: 35px;
   }
   @include mq(monitor) {
     margin-top: 135px;
     padding-bottom: 0px;
     margin-bottom: 175px;
     max-width: 980px;
-    margin-left: 53px;
+    margin-left: 0px;
   }
   span {
     color: $white;
@@ -284,6 +284,9 @@ span#sec-one-play-button {
         font-size: 16px;
         max-width: 100%;
       }
+      @include mq(small_laptop) {
+        font-size: 14px;
+      }
       @include mq(monitor) {
         font-size: 22px;
       }
@@ -304,6 +307,10 @@ span#sec-one-play-button {
         max-width: 570px;
         margin-top: 12px;
         @include quick_type(59px, 65px, null);
+      }
+      @include mq(small_laptop) {
+        max-width: 490px;
+        @include quick_type(50px, 56px, null);
       }
       @include mq(monitor) {
         max-width: 770px;
@@ -725,21 +732,111 @@ img#sec-one-hero-img {
   @include box(100%);
   @include mq(small_laptop) {
     //height: 563px;
-    left: -80px;
+    left: -114px;
+
     max-width: inherit;
     @include box(auto);
+    width: 1420px;
   }
   @media screen and (min-width: 1300px) {
-    left: 0px;
+    left: -50px;
   }
   @include mq(large_laptop) {
-    left: -120px;
+    left: -90px;
+    width: auto;
   }
   @media screen and (min-width: 1480px) {
-    left: 0px;
-    @include box(100%, 90%);
+    left: -40px;
+    //@include box(1480px, 100%);
+  }
+  @media screen and (min-width: 1540px) {
+    left: -150px;
+    @include box(1770px, 90%);
+  }
+  @media screen and (min-width: 1610px) {
+    left: -240px;
+    @include box(2000px, 90%);
+  }
+  @media screen and (min-width: 1740px) {
+    //height: calc(100% - 55px);
+    left: -140px;
+    //
   }
   @include mq(monitor) {
-    height: calc(100% - 55px);
+    left: 0px;
+  }
+  @media screen and (min-width: 1930px) {
+    left: 0px;
+  }
+  @media screen and (min-width: 2000px) {
+    width: 100%;
+  }
+}
+
+#att-buttons {
+  display: none;
+  @include mq(small_laptop) {
+    width: 100%;
+    max-width: 365px;
+    @include flex(space-between);
+    @include abs(420px, 0px, null, 495px);
+  }
+  @media screen and (min-width: 1300px) {
+    max-width: 450px;
+    @include abs(390px, 0px, null, 510px);
+  }
+  @include mq(large_laptop) {
+    left: 580px;
+  }
+  @media screen and (min-width: 1480px) {
+    @include abs(390px, 0px, null, 650px);
+  }
+  @media screen and (min-width: 1540px) {
+    max-width: 559px;
+    left: 613px;
+  }
+  @media screen and (min-width: 1610px) {
+    max-width: 655px;
+  }
+  @media screen and (min-width: 1740px) {
+    left: 715px;
+  }
+
+  @include mq(monitor) {
+    left: 798px;
+    top: 511px;
+    max-width: 630px;
+  }
+  @media screen and (min-width: 1900px) {
+    max-width: 700px;
+  }
+  @media screen and (min-width: 2100px) {
+    //max-width: 800px;
+    left: 900px;
+  }
+  @media screen and (min-width: 2200px) {
+    max-width: 800px;
+  }
+  .att-button {
+    @include mq(small_laptop) {
+      padding: 9px 18px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.13);
+      @include type(
+        (
+          size: 10px,
+          height: 12px,
+          family: $primaryfont,
+          color: #fff,
+          weight: 700,
+          align: center,
+          transform: uppercase,
+        )
+      );
+      @include mq(monitor) {
+        font-size: 12px;
+        padding: 11px 18px;
+      }
+    }
   }
 }
