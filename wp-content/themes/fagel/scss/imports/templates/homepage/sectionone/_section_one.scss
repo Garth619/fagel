@@ -252,6 +252,8 @@ span#sec-one-play-button {
   }
   @include mq(large_laptop) {
     margin-top: 112px;
+    padding-left: 0;
+    padding-right: 0;
     padding-bottom: 209px;
     margin-left: 35px;
   }
@@ -287,6 +289,9 @@ span#sec-one-play-button {
       @include mq(small_laptop) {
         font-size: 14px;
       }
+      @include mq(large_laptop) {
+        @include quick_type(16px, 20px, null);
+      }
       @include mq(monitor) {
         font-size: 22px;
       }
@@ -311,6 +316,10 @@ span#sec-one-play-button {
       @include mq(small_laptop) {
         max-width: 490px;
         @include quick_type(50px, 56px, null);
+      }
+      @include mq(large_laptop) {
+        max-width: 530px;
+        @include quick_type(58px, 61px, null);
       }
       @include mq(monitor) {
         max-width: 770px;

@@ -37,14 +37,16 @@
           padding: 189px 40px 104px;
           max-width: 1265px;
         }
+        @include mq(small_monitor) {
+          max-width: 1575px;
+        }
         @include mq(monitor) {
           padding: 210px 40px 95px;
-          max-width: 1510px;
         }
         #banner-content-inner {
           @include mq(small_tablet) {
-            max-width: 540px;
-            padding-left: 40px;
+            max-width: 490px;
+            padding-left: 0px;
           }
           @include mq(small_laptop) {
             max-width: 670px;
@@ -295,6 +297,7 @@ img#banner-img {
   object-fit: cover;
   @include abs(0, null, null, 0);
   @include box(100%);
+
   &.banner-img-video {
     @include box(1920px, 621px);
     @include abs(-49px, null, null, -730px);
@@ -309,6 +312,15 @@ img#banner-img {
     }
   }
   &.banner-img-pa {
+    @include mq(small_tablet) {
+      top: 26px;
+    }
+    @include mq(small_laptop) {
+      top: 46px;
+    }
+    @include mq(small_monitor) {
+      top: 29px;
+    }
   }
 }
 

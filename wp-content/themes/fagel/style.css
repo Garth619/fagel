@@ -1337,6 +1337,11 @@ header {
     background: transparent;
   }
 }
+@media screen and (min-width: 1170px) {
+  header.pa-banner {
+    background: #0f1517;
+  }
+}
 
 header.no-banner #header-left,
 header.no-banner #header-right {
@@ -1969,16 +1974,20 @@ nav.nav_desktop ul.menu > li.menu-item-has-children > a:hover::after {
     max-width: 1265px;
   }
 }
+@media screen and (min-width: 1695px) {
+  #banner-wrapper.banner-layout-pa #banner-content.pa-layout-content {
+    max-width: 1575px;
+  }
+}
 @media screen and (min-width: 1800px) {
   #banner-wrapper.banner-layout-pa #banner-content.pa-layout-content {
     padding: 210px 40px 95px;
-    max-width: 1510px;
   }
 }
 @media screen and (min-width: 768px) {
   #banner-wrapper.banner-layout-pa #banner-content.pa-layout-content #banner-content-inner {
-    max-width: 540px;
-    padding-left: 40px;
+    max-width: 490px;
+    padding-left: 0px;
   }
 }
 @media screen and (min-width: 1170px) {
@@ -2336,6 +2345,22 @@ img#banner-img.banner-img-video {
     height: 100%;
   }
 }
+@media screen and (min-width: 768px) {
+  img#banner-img.banner-img-pa {
+    top: 26px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  img#banner-img.banner-img-pa {
+    top: 46px;
+  }
+}
+@media screen and (min-width: 1695px) {
+  img#banner-img.banner-img-pa {
+    top: 29px;
+  }
+}
+
 #banner-left {
   position: relative;
   overflow: hidden;
@@ -4180,6 +4205,8 @@ span#sec-one-play-button span {
 @media screen and (min-width: 1380px) {
   #sec-one-titles {
     margin-top: 112px;
+    padding-left: 0;
+    padding-right: 0;
     padding-bottom: 209px;
     margin-left: 35px;
   }
@@ -4223,6 +4250,12 @@ span#sec-one-play-button span {
     font-size: 14px;
   }
 }
+@media screen and (min-width: 1380px) {
+  #sec-one-titles span#sec-one-subtitle {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
 @media screen and (min-width: 1800px) {
   #sec-one-titles span#sec-one-subtitle {
     font-size: 22px;
@@ -4254,6 +4287,13 @@ span#sec-one-play-button span {
     max-width: 490px;
     font-size: 50px;
     line-height: 56px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-one-titles span#sec-one-title {
+    max-width: 530px;
+    font-size: 58px;
+    line-height: 61px;
   }
 }
 @media screen and (min-width: 1800px) {

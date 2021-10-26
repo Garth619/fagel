@@ -11,6 +11,11 @@ header {
   @include mq(small_laptop) {
     background: transparent;
   }
+  &.pa-banner {
+    @include mq(small_laptop) {
+      background: $blacktwo;
+    }
+  }
 }
 
 header.no-banner {
