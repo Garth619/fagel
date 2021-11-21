@@ -7,22 +7,30 @@
       <span id='banner-subtitle'><?php the_field('global_internal_banner_sub_title', 'option');?></span>
       <!-- page-title -->
 
+      <?php $str = get_the_title();
+$banner_font_size = 'large-banner-text';
+if (strlen($str) > 75) {
+    $banner_font_size = 'small-banner-text';
+}?>
+
       <?php if (is_home()) {?>
 
-      <h1 class='banner-title page-title banner-pa-title'><?php the_field('blog_banner_title', 12);?></h1>
+      <h1 class='banner-title page-title banner-pa-title <?php echo $banner_font_size; ?>'>
+        <?php the_field('blog_banner_title', 12);?></h1>
       <!-- page-title -->
 
       <?php }?>
 
       <?php if (is_category()) {?>
 
-      <h1 class="banner-title page-title banner-pa-title"><?php single_cat_title();?></h1>
+      <h1 class="banner-title page-title banner-pa-title <?php echo $banner_font_size; ?>"><?php single_cat_title();?>
+      </h1>
 
       <?php }?>
 
       <?php if (is_archive() && !is_category()) {?>
 
-      <h1 class="banner-title page-title banner-pa-title">
+      <h1 class="banner-title page-title banner-pa-title <?php echo $banner_font_size; ?>">
         <?php printf(__('<span>%s</span>'), get_the_date(_x('Y', 'yearly archives date format')));?>
       </h1>
 
@@ -30,7 +38,7 @@
 
       <?php if (is_single()) {?>
 
-      <h1 class="banner-title page-title banner-pa-title"><?php the_title();?></h1>
+      <h1 class="banner-title page-title banner-pa-title <?php echo $banner_font_size; ?>"><?php the_title();?></h1>
 
       <?php }?>
 

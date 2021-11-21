@@ -30,28 +30,37 @@
 
       <?php endif;?>
 
+      <?php $str = get_the_title();
+$banner_font_size = 'large-banner-text';
+if (strlen($str) > 75) {
+    $banner_font_size = 'small-banner-text';
+}?>
+
       <?php if (get_field('banner_h1') == "Yes"): ?>
 
-      <h1 class='banner-title page-title banner-pa-title'><?php the_title();?></h1><!-- page-title -->
+      <h1 class='banner-title page-title banner-pa-title <?php echo $banner_font_size; ?>'><?php the_title();?></h1>
+      <!-- page-title -->
 
       <?php else: ?>
 
       <?php if (get_field('banner_title')): ?>
 
-      <span class='banner-title page-title banner-pa-title'><?php the_field('banner_title');?></span><!-- page-title -->
+      <span
+        class='banner-title page-title banner-pa-title <?php echo $banner_font_size; ?>'><?php the_field('banner_title');?></span>
+      <!-- page-title -->
 
       <?php else: ?>
 
       <?php if (is_page('gracias') || is_singular('espanol')): ?>
 
       <span
-        class='banner-title page-title banner-pa-title'><?php the_field('spanish_global_internal_banner_title', 'option');?></span>
+        class='banner-title page-title banner-pa-title <?php echo $banner_font_size; ?>'><?php the_field('spanish_global_internal_banner_title', 'option');?></span>
       <!-- page-title -->
 
       <?php else: ?>
 
       <span
-        class='banner-title page-title banner-pa-title'><?php the_field('global_internal_banner_title', 'option');?></span>
+        class='banner-title page-title banner-pa-title <?php echo $banner_font_size; ?>'><?php the_field('global_internal_banner_title', 'option');?></span>
       <!-- page-title -->
 
       <?php endif;?>

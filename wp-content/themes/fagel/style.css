@@ -507,7 +507,8 @@ html.fixed, body.fixed {
 	height:100%;
 }
 */
-body .gform_wrapper .gform_validation_container {
+body .gform_wrapper .gform_validation_container,
+.gform_hidden {
   display: none;
 }
 
@@ -1986,14 +1987,18 @@ nav.nav_desktop ul.menu > li.menu-item-has-children > a:hover::after {
 }
 @media screen and (min-width: 768px) {
   #banner-wrapper.banner-layout-pa #banner-content.pa-layout-content #banner-content-inner {
-    max-width: 490px;
+    max-width: 560px;
     padding-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media screen and (min-width: 1170px) {
   #banner-wrapper.banner-layout-pa #banner-content.pa-layout-content #banner-content-inner {
-    max-width: 670px;
+    max-width: 720px;
     padding-left: 0px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 @media screen and (min-width: 1380px) {
@@ -2191,6 +2196,12 @@ h1.banner-pa-title {
     line-height: 65px;
   }
 }
+@media screen and (min-width: 1170px) {
+  h1.banner-pa-title.small-banner-text {
+    font-size: 35px;
+    line-height: 46px;
+  }
+}
 
 @media screen and (min-width: 1800px) {
   body.blog h1.banner-pa-title {
@@ -2348,6 +2359,8 @@ img#banner-img.banner-img-video {
 @media screen and (min-width: 768px) {
   img#banner-img.banner-img-pa {
     top: 26px;
+    -o-object-position: top;
+       object-position: top;
   }
 }
 @media screen and (min-width: 1170px) {

@@ -59,7 +59,8 @@ html.fixed, body.fixed {
 }
 */
 
-body .gform_wrapper .gform_validation_container {
+body .gform_wrapper .gform_validation_container,
+.gform_hidden {
   display: none;
 }
 
